@@ -7,20 +7,20 @@ import '../form.css'
 
 //Start Component
 
-class LogIn extends Component {
+class SignIn extends Component {
   render(){
     return(
-      <div className="form-container log-in-container">
+      <div className="form-container sign-up-container">
         <form action="#">
-          <h1>Sign in</h1>
+          <h1>Create Account</h1>
+          <input type="text" placeholder="Name" />
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <button>Sign In</button>
+          <button>Sign Up</button>
         </form>
       </div>
     )
   }
 }
 
-export default LogIn
+export default SignIn
