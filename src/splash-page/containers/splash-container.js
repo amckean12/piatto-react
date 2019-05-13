@@ -13,22 +13,27 @@ import '../splash-style.js'
 
 //Start Component
 
-class SplashContainer extends Component {
 
+class SplashContainer extends Component {
+  state = {
+    splashContainerName: "splash-container"
+  }
 
   signUpButtonClicked = () => {
-
+    this.setState({
+      splashContainerName: "splash-container right-panel-active"
+    })
   }
 
   signInButtonClicked = () => {
-
+    this.setState({
+      splashContainerName: "splash-container"
+    })
   }
-
-
 
   render(){
     return(
-      <div className="splash-container">
+      <div className={this.state.splashContainerName}>
         <SignIn />
         <LogIn />
         <div className="overlay-container">
