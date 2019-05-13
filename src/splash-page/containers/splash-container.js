@@ -14,6 +14,18 @@ import '../splash-style.js'
 //Start Component
 
 class SplashContainer extends Component {
+
+
+  signUpButtonClicked = () => {
+
+  }
+
+  signInButtonClicked = () => {
+
+  }
+
+
+
   render(){
     return(
       <div className="splash-container">
@@ -21,8 +33,8 @@ class SplashContainer extends Component {
         <LogIn />
         <div className="overlay-container">
           <div className="overlay">
-            <OverlayComponentWelcome />
-            <OverlayComponentHello />
+            <OverlayComponentWelcome signInButtonClicked={this.signInButtonClicked}/>
+            <OverlayComponentHello signUpButtonClicked={this.signUpButtonClicked}/>
           </div>
         </div>
       </div>

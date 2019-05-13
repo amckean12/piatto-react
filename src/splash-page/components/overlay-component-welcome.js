@@ -12,7 +12,7 @@ class OverlayComponentWelcome extends Component {
       <div class="overlay-panel overlay-left">
         <h1>Welcome Back!</h1>
         <p>To keep connected with us please login with your personal info</p>
-        <button class="ghost" id="signIn">Sign In</button>
+        <button class="ghost" id="signIn" onClick={this.props.signInButtonClicked}>Sign In</button>
       </div>
     )
   }

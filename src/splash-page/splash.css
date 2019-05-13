@@ -39,3 +39,30 @@ p {
 	max-width: 100%;
 	min-height: 480px;
 }
+
+/* Move Signin to the right */
+.splash-container.right-panel-active .sign-in-conatiner{
+  transform: translateX(100%);
+}
+
+.splash-container.right-panel-active .overlay-container{
+  transform: translateX(-100%);
+}
+
+.splash-container.right-panel-active .sign-up-container{
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.splash-container.right-panel-active .overlay{
+  transform: translateX(50%);
+}
+
+.splash-container.right-panel-active .overlay-left{
+  transform: translateX(0);
+}
+
+.splash-container.right-panel-active .overlay-right{
+  transform: translateX(20%);
+}
