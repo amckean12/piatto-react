@@ -5,7 +5,6 @@ import OverlayComponentWelcome from '../components/overlay-component-welcome.js'
 import OverlayComponentHello from '../components/overlay-component-hello.js'
 import '../splash.css'
 import '../overlay.css'
-import '../splash-style.js'
 //Container CSS Section
 
 //End CSS

@@ -41,7 +41,7 @@ p {
 }
 
 /* Move Signin to the right */
-.splash-container.right-panel-active .sign-in-conatiner{
+.splash-container.right-panel-active .log-in-container{
   transform: translateX(100%);
 }
 
