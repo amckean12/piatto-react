@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import SplashContainer from './splash-page/containers/splash-container'
-import Header from './header/header.js'
+import HeaderComponent from './header/header.js'
 import FooterComponent from './footer/footer.js'
 
 

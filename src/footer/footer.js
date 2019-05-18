@@ -8,9 +8,9 @@ import React, { Component } from 'react'
 class FooterComponent extends Component {
   render(){
     return(
-      <Footer class="Site-Footer">
-        <h1>Footer</h1>
-      </Footer>
+      <footer class="Site-Footer">
+        <h3>Made By: Alex McKean</h3>
+      </footer>
 
     )
   }
