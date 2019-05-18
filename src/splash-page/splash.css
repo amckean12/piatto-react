@@ -4,14 +4,17 @@
   box-sizing: border-box;
 }
 
-body{
+.App{
   background: #f6f5f7;
+  height: 100vh;
+  font-family: 'Ubuntu';
+}
+
+.initialInputs{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Ubuntu';
-	height: 100vh;
 	margin: -20px 0 50px;
 }
 
@@ -26,6 +29,15 @@ p {
   line-height: 20px;
   letter-spacing: 0.5px;
   margin: 20px 0 30px;
+}
+
+.Site-Header{
+  width: 100%;
+}
+
+.Site-Footer{
+  width: 100%;
+  background: #252525;
 }
 
 .splash-container {

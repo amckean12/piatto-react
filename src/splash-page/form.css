@@ -19,8 +19,8 @@
 
 button {
   border-radius: 20px;
-  border: 1px solid #ff4b2b;
-  background: #ff4b2b;
+  border: 1px solid #00C9FF;
+  background: #00C9FF;
   color: #fff;
   font-size: 12px;
   font-weight: bold;
@@ -40,7 +40,7 @@ button:focus{
 
 button.ghost{
   background: transparent;
-  border-color: #fff;
+  border-color: #FFFFFF;
 }
 
 .form-container{
