@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import '../form.css'
+import { connect } from 'react-redux'
+import { userSignUpFetch } from "../../actions/signup-actions.js"
 //Container CSS Section
 
 //End CSS
@@ -23,7 +25,7 @@ class SignUp extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    //this.props.loginUser(this.state)
+    this.props.userSignUpFetch(this.state)
     this.setState({
       firstName: "",
       lastName: "",
@@ -48,4 +50,8 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp
+const mapDispatchToProps = dispatch => ({
+  userSignUpFetch: newUserInfo => dispatch(userSignUpFetch(newUserInfo))
+})
+
+export default connect(null, mapDispatchToProps)(SignUp)
