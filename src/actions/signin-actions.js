@@ -13,14 +13,15 @@ export const loginUserFetch = user => {
       if (data.message){
         console.log(data.message)
       }else{
+        debugger;
         localStorage.setItem("token", data.jwt)
-        dispatch(loginUser(data.user))
+        dispatch(loginUser(data))
       }
     })
   }
 }
 
-const loginUser = userObj => ({
+export const loginUser = userObj => ({
   type: 'LOGIN_USER',
   payload: userObj
 })
