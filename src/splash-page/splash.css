@@ -21,8 +21,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-  padding-top: 85px;
-	margin: -20px 0 50px;
+	margin: -80px 0 50px;
 }
 
 h1 {
@@ -39,7 +38,8 @@ p {
 }
 
 .Site-Header{
-  width: 100%;
+  width: 18%;
+  z-index: -1;
 }
 
 .Site-Footer{
@@ -57,6 +57,7 @@ p {
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
+  z-index: 1;
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;

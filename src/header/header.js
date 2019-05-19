@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
+import logo from '../logo.png';
 //Container CSS Section
-const headerStyle = {
-  "font-size": "32px",
-}
 
-const headerH1Style = {
-  color: "#92FE9D",
-}
 //End CSS
 
 
@@ -14,8 +9,8 @@ const headerH1Style = {
 class HeaderComponent extends Component {
   render(){
     return(
-      <div className="Site-Header" style={headerStyle}>
-        <h1 style={headerH1Style}>Piatto Beta</h1>
+      <div className="Site-Header">
+        <img src={ logo } alt="Logo"/>
       </div>
 
     )

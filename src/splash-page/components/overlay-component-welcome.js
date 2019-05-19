@@ -9,10 +9,10 @@ import React, { Component } from 'react'
 class OverlayComponentWelcome extends Component {
   render(){
     return(
-      <div class="overlay-panel overlay-left">
+      <div className="overlay-panel overlay-left">
         <h1>Welcome Back!</h1>
         <p>To keep connected with us please login with your personal info</p>
-        <button class="ghost" id="signIn" onClick={this.props.signInButtonClicked}>Sign In</button>
+        <button className="ghost" id="signIn" onClick={this.props.signInButtonClicked}>Sign In</button>
       </div>
     )
   }
