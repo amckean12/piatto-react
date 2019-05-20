@@ -7,10 +7,9 @@
 body {
    margin:0;
    padding:0;
-   height:100%;
 }
 
-.App{
+.initial-inputs{
   background: #f6f5f7;
   height: 100vh;
   font-family: 'Ubuntu';

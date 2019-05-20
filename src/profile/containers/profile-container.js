@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import NavbarContainer from '/profile-container.js'
+import NavbarContainer from './navbar-container.js'
+import MenuContainer from '../../menu/containers/menu-container.js'
+import ListContainer from './list-container.js'
+import "../profile.css"
+
 
 class ProfileContainer extends Component {
 

@@ -1,0 +1,31 @@
+.profile-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+}
+
+.navbar-container{
+  float: left;
+  width: 20%;
+  text-align: center;
+  height: 100%;
+  background: green;
+}
+
+.list-container{
+  float: right;
+  width: 20%;
+  text-align: center;
+  height: 100%;
+  background: red;
+}
+
+.menu-container{
+  position: relative;
+  width: 60%;
+  float: left;
+  text-align: center;
+  height: 100%;
+  background: blue;
+}

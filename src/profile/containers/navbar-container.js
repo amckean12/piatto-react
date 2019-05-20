@@ -6,8 +6,8 @@ class NavbarContainer extends Component {
 
   render(){
     return(
-      <div className="profile-container">
-        Hello
+      <div className='navbar-container'>
+        NavbarContainer
       </div>
     )
   }
