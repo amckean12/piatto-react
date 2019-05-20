@@ -13,11 +13,13 @@ export const loginUserFetch = user => {
       if (data.message){
         console.log(data.message)
       }else{
-        debugger;
         localStorage.setItem("token", data.jwt)
         dispatch(loginUser(data))
       }
     })
+    .then(() => {
+                browserHistory.push('/profile')
+            })
   }
 }
 

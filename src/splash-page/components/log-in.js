@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../form.css'
 import { connect } from 'react-redux';
 import { loginUserFetch } from '../../actions/signin-actions.js'
+import { Redirect } from 'react-router-dom'
 //Container CSS Section
 
 //End CSS
@@ -13,6 +14,10 @@ class LogIn extends Component {
   state={
     email: "",
     password: ""
+  }
+
+  componentDidMount(){
+    this.handleRedirect();
   }
 
   handleChange(event){
@@ -30,6 +35,12 @@ class LogIn extends Component {
     })
   }
 
+  handleRedirect(){
+    if(this.props.isLoggedIn === true){
+      return <Redirect to='/profile' />
+    }
+  }
+
   render(){
     return(
       <div className="form-container log-in-container">
@@ -45,9 +56,13 @@ class LogIn extends Component {
   }
 }
 
+const mapStateToProps = user => ({
+  isLoggedIn: user.userReducer.isLoggedIn
+})
+
 const mapDispatchToProps = dispatch => ({
   loginUserFetch: userInfo => dispatch(loginUserFetch(userInfo))
 })
 
 
-export default connect(null, mapDispatchToProps)(LogIn)
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn)
