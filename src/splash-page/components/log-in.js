@@ -17,6 +17,7 @@ class LogIn extends Component {
   }
 
   componentDidMount(){
+    debugger;
     this.handleRedirect();
   }
 

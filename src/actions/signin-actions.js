@@ -17,9 +17,6 @@ export const loginUserFetch = user => {
         dispatch(loginUser(data))
       }
     })
-    .then(() => {
-                browserHistory.push('/profile')
-            })
   }
 }
 
