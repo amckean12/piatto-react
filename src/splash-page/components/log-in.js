@@ -16,9 +16,8 @@ class LogIn extends Component {
     password: ""
   }
 
-  componentDidMount(){
-    debugger;
-    this.handleRedirect();
+  componentDidUpdate(){
+    this.handleRedirect()
   }
 
   handleChange(event){
