@@ -22,7 +22,7 @@
   margin-top: 1%;
   margin-left: 1%;
   outline:none;
-  width: 130px;
+  width: 40%;
   border:none;
   border-bottom:1px solid #757575;
   font-size: 25px;
@@ -33,5 +33,5 @@
 
 /* When the input field gets focus, change its width to 100% */
 .menu-search-bar input[type=text]:focus {
-  width: 65%;
+  width: 98%;
 }

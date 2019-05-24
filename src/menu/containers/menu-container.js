@@ -5,13 +5,15 @@ import '../menu-container.css'
 
 class MenuContainer extends Component {
   state = {
-
+    searchTag: '',
   }
 
-  handleClick(e){
-    e.preventDefault();
-    console.log("Hello")
+  handleChange(event) {
+    this.setState({
+      searchTag: event.target.value
+    })
   }
+
 
   render(){
     return(
@@ -20,7 +22,7 @@ class MenuContainer extends Component {
           <h1>Menu For Alex</h1>
         </div>
         <div className="menu-search-bar">
-          <input type="text" name="search" placeholder="#Italian" />
+          <input type="text" placeholder="Select a food type try: #Italian" onChange={(event) => this.handleChange(event)} value={this.state.searchTag}/>
         </div>
       </div>
     )
@@ -30,18 +32,3 @@ class MenuContainer extends Component {
 
 
 export default MenuContainer
-
-
-//Protype function to add days to JS date object <Need to make dynamic based upon user scroll patterns>
-
-//
-// saveDatesForComponentRender = (today, stopDate) => {
-//   let dateArray = [];
-//   let currentDate = today
-//   while (today <= stopDate){
-//     dateArray.push(new Date (currentDate))
-//     debugger;
-//     currentDate = currentDate.addDaysProto(1);
-//     console.log(currentDate)
-//   }
-// }
