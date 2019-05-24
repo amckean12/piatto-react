@@ -14,3 +14,11 @@
   top: 0;
   border:1px solid black;
 }
+
+.search {
+  width: 10%;
+  height: 10%;
+  left: 0;
+  top: 0;
+  background: #3cabea;
+}

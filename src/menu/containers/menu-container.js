@@ -4,19 +4,23 @@ import DailyMealsContainer from './daily-meals-container.js'
 import '../menu-container.css'
 
 class MenuContainer extends Component {
+  state = {
+
+  }
+
+  handleClick(e){
+    e.preventDefault();
+    console.log("Hello")
+  }
+
   render(){
     return(
       <div className="menu-container">
         <div className="menu-for-user-container">
           <h1>Menu For Alex</h1>
         </div>
-        <DailyMealsContainer />
-        <DailyMealsContainer />
-        <DailyMealsContainer />
-        <DailyMealsContainer />
-        <DailyMealsContainer />
-        <DailyMealsContainer />
-        <DailyMealsContainer />
+        <div className="search" onClick={(event) => this.handleClick(event)}>
+        </div>
       </div>
     )
   }
