@@ -19,7 +19,8 @@ class MenuContainer extends Component {
         <div className="menu-for-user-container">
           <h1>Menu For Alex</h1>
         </div>
-        <div className="search" onClick={(event) => this.handleClick(event)}>
+        <div className="menu-search-bar">
+          <input type="text" name="search" placeholder="#Italian" />
         </div>
       </div>
     )
