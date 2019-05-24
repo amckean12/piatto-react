@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import DailyMealsContainer from './daily-meals-container.js'
 import { fetchFood } from '../../actions/tag-lookup-action.js'
+import MealBox from '../components/meal-box.js'
 import '../menu-container.css'
 
 class MenuContainer extends Component {
@@ -23,6 +24,18 @@ class MenuContainer extends Component {
       searchTag: ''
     })
   }
+
+//How can I get this called after an update of state? Where Im at.
+  renderFoodBoxs = () => {
+    if (this.props.displayedFood === undefined ){
+      return "No Current Food";
+    } else {
+      return this.props.displayedFood.map( food =>{
+        return(<MealBox key={food.id} food={food}/>)
+      })
+    }
+  }
+
 
 
   render(){
