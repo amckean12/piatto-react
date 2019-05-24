@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import DailyMealsContainer from './daily-meals-container.js'
+import { fetchFood } from '../../actions/tag-lookup-action.js'
 import '../menu-container.css'
 
 class MenuContainer extends Component {
@@ -17,7 +18,7 @@ class MenuContainer extends Component {
 //When the enter button is clicked within the function
   handleSubmit(event){
     event.preventDefault()
-    console.log("method hit")
+    this.props.fetchFood(this.state.searchTag)
     this.setState({
       searchTag: ''
     })
@@ -38,6 +39,9 @@ class MenuContainer extends Component {
   }
 }
 
+// const mapStateToProps = user => ({
+//
+// })
 
 
-export default MenuContainer
+export default connect(null, { fetchFood })(MenuContainer)
