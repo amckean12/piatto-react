@@ -1,0 +1,10 @@
+.meal-box {
+  width: 30%;
+  height: 80%;
+  float: left;
+  margin: 0 3% 20px 0;
+  border: 1px solid #999;
+  border-radius: 12px;
+  padding: 10px;
+  box-sizing: border-box;
+}

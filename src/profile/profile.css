@@ -10,7 +10,7 @@
   width: 20%;
   text-align: center;
   height: 100%;
-  background: green;
+  border:1px solid black;
 }
 
 .list-container{
@@ -18,14 +18,5 @@
   width: 20%;
   text-align: center;
   height: 100%;
-  background: red;
-}
-
-.menu-container{
-  position: relative;
-  width: 60%;
-  float: left;
-  text-align: center;
-  height: 100%;
-  background: blue;
+  border:1px solid black;
 }
