@@ -14,6 +14,15 @@ class MenuContainer extends Component {
     })
   }
 
+//When the enter button is clicked within the function
+  handleSubmit(event){
+    event.preventDefault()
+    console.log("method hit")
+    this.setState({
+      searchTag: ''
+    })
+  }
+
 
   render(){
     return(
@@ -21,9 +30,9 @@ class MenuContainer extends Component {
         <div className="menu-for-user-container">
           <h1>Menu For Alex</h1>
         </div>
-        <div className="menu-search-bar">
+        <form className="menu-search-bar" onSubmit={(event) => this.handleSubmit(event)}>
           <input type="text" placeholder="Select a food type try: #Italian" onChange={(event) => this.handleChange(event)} value={this.state.searchTag}/>
-        </div>
+        </form>
       </div>
     )
   }
