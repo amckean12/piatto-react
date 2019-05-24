@@ -26,12 +26,12 @@ class MenuContainer extends Component {
   }
 
 //How can I get this called after an update of state? Where Im at.
-  renderFoodBoxs = () => {
+  componentDidUpdate(){
     if (this.props.displayedFood === undefined ){
-      return "No Current Food";
+      return "";
     } else {
       return this.props.displayedFood.map( food =>{
-        return(<MealBox key={food.id} food={food}/>)
+        return(<MealBox key={food.id} food={ food }/>)
       })
     }
   }
@@ -47,6 +47,7 @@ class MenuContainer extends Component {
         <form className="menu-search-bar" onSubmit={(event) => this.handleSubmit(event)}>
           <input type="text" placeholder="Select a food type try: #Italian" onChange={(event) => this.handleChange(event)} value={this.state.searchTag}/>
         </form>
+        { this.componentDidUpdate() }
       </div>
     )
   }
@@ -58,5 +59,5 @@ const mapStateToProps = food => {
  })
 }
 
-
+//fetchFood used in place of mapDispatchToProps (Same thing)
 export default connect(mapStateToProps, { fetchFood })(MenuContainer)
