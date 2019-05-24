@@ -39,9 +39,11 @@ class MenuContainer extends Component {
   }
 }
 
-// const mapStateToProps = user => ({
-//
-// })
+const mapStateToProps = food => {
+ return({
+   displayedFood: food.foodReducer.recipes
+ })
+}
 
 
-export default connect(null, { fetchFood })(MenuContainer)
+export default connect(mapStateToProps, { fetchFood })(MenuContainer)
