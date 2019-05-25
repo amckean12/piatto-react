@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import DailyMealsContainer from './daily-meals-container.js'
 import { fetchFood } from '../../actions/tag-lookup-action.js'
-import MealBox from '../components/meal-box.js'
 import '../menu-container.css'
 
 class MenuContainer extends Component {
@@ -31,7 +30,7 @@ class MenuContainer extends Component {
       return "";
     } else {
       return this.props.displayedFood.map( food =>{
-        return(<MealBox key={food.id} food={ food }/>)
+        return(<DailyMealsContainer key={food.id} food={ food }/>)
       })
     }
   }
@@ -44,9 +43,11 @@ class MenuContainer extends Component {
         <div className="menu-for-user-container">
           <h1>Menu For Alex</h1>
         </div>
-        <form className="menu-search-bar" onSubmit={(event) => this.handleSubmit(event)}>
-          <input type="text" placeholder="Select a food type try: #Italian" onChange={(event) => this.handleChange(event)} value={this.state.searchTag}/>
-        </form>
+        <div className="menu-search-form-container">
+          <form className="menu-search-bar" onSubmit={(event) => this.handleSubmit(event)}>
+            <input type="text" placeholder="Select a food type try: #Italian" onChange={(event) => this.handleChange(event)} value={this.state.searchTag}/>
+          </form>
+        </div>
         { this.componentDidUpdate() }
       </div>
     )

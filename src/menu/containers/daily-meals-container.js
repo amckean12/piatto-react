@@ -1,26 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import MealBox from '../components/meal-box.js'
-import "../daily-meal-container.css";
+import MealBoxTitle from '../components/meal-box-title.js'
+import "../meal-box.css"
 
 class DailyMealsContainer extends Component {
+  constructor(props){
+    super(props);
+  }
 
   state = {
     mealBoxClassName: "meal-box"
   }
 
-  handleClick = () => {
-    if(this.state.mealBoxClassName === "meal-box"){
-      this.setState({ mealBoxClassName: 'meal-box open' })
-    }else {
-      this.setState({ mealBoxClassName: 'meal-box' })
-    }
-  }
-
   render(){
     return(
-      <div className="daily-meals-container">
-
+      <div className={this.state.mealBoxClassName}>
+        <MealBoxTitle recipeName={ this.props.food.name }/>
       </div>
     )
   }
