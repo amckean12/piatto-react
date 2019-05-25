@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import MealBoxTitle from '../components/meal-box-title.js'
+import MealBoxDescription from '../components/meal-box-description.js'
 import "../meal-box.css"
 
 class DailyMealsContainer extends Component {
@@ -25,7 +26,7 @@ class DailyMealsContainer extends Component {
   }
 
   addDescriptionComponent(){
-
+    return <MealBoxDescription mealDescription= { this.props.food.description } />
   }
 
   render(){
