@@ -5,15 +5,26 @@
   margin: 1% 1% 1% 1%;
   border: 1px solid #999;
   border-radius: 12px;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .meal-box-title-component{
-
+  height: 20%;
 }
  .meal-box-title-component p{
    margin-top: 0;
+   margin-bottom: 0;
    background-color: #68F25E;
    border: 1px solid #68F25E;
    border-top-left-radius: 12px;
    border-top-right-radius: 12px;
  }
+
+.meal-box.open{
+  width: 98%;
+  height: 40%;
+}

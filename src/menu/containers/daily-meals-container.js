@@ -12,10 +12,27 @@ class DailyMealsContainer extends Component {
     mealBoxClassName: "meal-box"
   }
 
+  handleClick(event){
+    if(this.state.mealBoxClassName === "meal-box open"){
+      this.setState({
+        mealBoxClassName: "meal-box"
+      })
+    }else{
+        this.setState({
+          mealBoxClassName: "meal-box open"
+        })
+    }
+  }
+
+  addDescriptionComponent(){
+
+  }
+
   render(){
     return(
-      <div className={this.state.mealBoxClassName}>
-        <MealBoxTitle recipeName={ this.props.food.name }/>
+      <div className={this.state.mealBoxClassName} onClick={(event) => this.handleClick(event)}>
+        <MealBoxTitle recipeName={ this.props.food.name } />
+        { this.state.mealBoxClassName === "meal-box open" ? this.addDescriptionComponent() : <p>Click Me</p>}
       </div>
     )
   }
