@@ -11,13 +11,16 @@ import { userSignUpFetch } from "../../actions/signup-actions.js"
 
 class SignUp extends Component {
   state={
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: ""
+    user: {
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: ""
+    }
   }
 
   handleChange(event){
+    debugger;
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -25,24 +28,18 @@ class SignUp extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.userSignUpFetch(this.state)
-    this.setState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: ""
-    })
-  }
+    }
+    //this.props.userSignUpFetch(this.state)
 
   render(){
     return(
       <div className="form-container sign-up-container" onSubmit={(event) => this.handleSubmit(event)}>
         <form action="#">
           <h1>Create Account</h1>
-          <input type="text" placeholder="First Name" name="firstName" onChange={(event) => this.handleChange(event)} value={this.state.firstName}/>
-          <input type="text" placeholder="Last Name" name="lastName" onChange={(event) => this.handleChange(event)} value={this.state.lastName}/>
-          <input type="email" placeholder="Email" name="email" onChange={(event) => this.handleChange(event)} value={this.state.email}/>
-          <input type="password" placeholder="Password" name="password" onChange={(event) => this.handleChange(event)} value={this.state.password}/>
+          <input type="text" placeholder="First Name" name="first_name" onChange={(event) => this.handleChange(event)} value={this.state.user.first_name}/>
+          <input type="text" placeholder="Last Name" name="last_name" onChange={(event) => this.handleChange(event)} value={this.state.user.last_name}/>
+          <input type="email" placeholder="Email" name="email" onChange={(event) => this.handleChange(event)} value={this.state.user.email}/>
+          <input type="password" placeholder="Password" name="password" onChange={(event) => this.handleChange(event)} value={this.state.user.password}/>
           <button>Sign Up</button>
         </form>
       </div>

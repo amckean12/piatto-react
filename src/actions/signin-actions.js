@@ -1,6 +1,6 @@
 export const loginUserFetch = user => {
   return dispatch => {
-    return fetch("http://localhost:3001/login", {
+    return fetch("http://localhost:3001/user_token", {
       method: "POST",
       headers:{
         'Content-Type': 'application/json',

@@ -1,12 +1,12 @@
 export const userSignUpFetch = user => {
   return dispatch => {
-    return fetch("http://localhost:3001/signup", {
+    return fetch("http://localhost:3001/users/create", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({user})
+      user: JSON.stringify({user})
     })
       .then(resp => resp.json())
       .then(data => {
