@@ -1,30 +1,29 @@
-import { authRequest, authFailure, authSuccess } from './authentication-actions.js'
+import { authFailure } from './authentication-actions.js'
+import { loginUserFetch } from './signin-actions.js'
 import { API_URL } from './api_URL'
 
-export const signup = user => {
+export const userSignUpFetch = (user) => {
+  const newUser = user
   return dispatch => {
-    return fetch("http://localhost:3001/api/user_token", {
+    return fetch(`${API_URL}/users`, {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
+        Accept:"application/json",
+        "Content-Type":"application/json"
       },
-      user: JSON.stringify({user: user})
+      body: JSON.stringify({user: user})
     })
-      .then(resp => resp.json())
-      .then(data => {
-        if (data.message) {
-          console.log(data.message)
-        } else {
-          console.log(data.user)
-          localStorage.setItem("token", data.jwt)
-          dispatch(loginUser(data.user))
-        }
+      .then(response => response.json())
+      .then(jresp => {
+        dispatch(loginUserFetch({
+          first_name: newUser.firstName,
+          last_name: newUser.lastName,
+          email: newUser.email,
+          password: newUser.password})
+        );
       })
-  }
+      .catch((errors) => {
+        dispatch(authFailure(errors))
+      })
+  };
 }
-
-export const loginUser = userObj => ({
-    type: 'LOGIN_USER',
-    payload: userObj
-  })
