@@ -36,7 +36,7 @@ class LogIn extends Component {
   }
 
   handleRedirect(){
-    if(this.props.isLoggedIn === true){
+    if(this.props.isAuthenticated === true){
       return <Redirect to='/profile' />
     }
   }
