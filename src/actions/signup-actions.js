@@ -1,12 +1,15 @@
-export const userSignUpFetch = user => {
+import { authRequest, authFailure, authSuccess } from './authentication-actions.js'
+import { API_URL } from './api_URL'
+
+export const signup = user => {
   return dispatch => {
-    return fetch("http://localhost:3001/users/create", {
+    return fetch("http://localhost:3001/api/user_token", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      user: JSON.stringify({user})
+      user: JSON.stringify({user: user})
     })
       .then(resp => resp.json())
       .then(data => {
