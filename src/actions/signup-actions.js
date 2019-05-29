@@ -3,27 +3,22 @@ import { loginUserFetch } from './signin-actions.js'
 import { API_URL } from './api_URL'
 
 export const userSignUpFetch = (user) => {
-  const newUser = user
-  return dispatch => {
-    return fetch(`${API_URL}/users`, {
-      method: "POST",
-      headers: {
-        Accept:"application/json",
-        "Content-Type":"application/json"
-      },
-      body: JSON.stringify({user: user})
-    })
-      .then(response => response.json())
-      .then(jresp => {
-        dispatch(loginUserFetch({
-          first_name: newUser.firstName,
-          last_name: newUser.lastName,
-          email: newUser.email,
-          password: newUser.password})
-        );
-      })
-      .catch((errors) => {
-        dispatch(authFailure(errors))
-      })
-  };
+  //Fetch request info
+  const newUser = JSON.stringify({user: user})
+  const options = {
+    method: 'post',
+    headers: {
+      'Content-type': 'application/json'
+    },
+    body: newUser
+  }
+  const fetchURL = `${API_URL}/users`
+  fetch(fetchURL, options)
+  .then(response => {
+    let test = response.json();
+    console.log(test)
+  })
+  .catch(err => {
+    console.error('Request failed', err)
+  })
 }
