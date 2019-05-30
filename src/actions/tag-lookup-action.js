@@ -6,9 +6,19 @@ export const setFood = food => {
 
 
 export const fetchFood = (tag) => {
+  const findFoodURL = `${API_URL}/tags/${tag}`;
+  const options = {
+    method: 'get',
+    headers: {
+      'Authorization': `Bearer ${localStorage.token}`
+    }
+  }
   return dispatch => {
-    return fetch(`${API_URL}/tags/${tag}`)
+    return fetch(findFoodURL, options)
       .then(r=>r.json())
       .then(food => dispatch(setFood(food)))
+      .catch(err =>{
+        console.log('Request Failed:', err)
+      })
   }
 }

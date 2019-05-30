@@ -2,9 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import NavbarLinkComponent from '../components/navbar-link-component';
 import NavbarProfileComponent from '../components/navbar-profile-component';
+import { getUser } from '../../actions/get-user.js'
 
 class NavbarContainer extends Component {
 
+  // componentDidMount(){
+  //   getUser({
+  //     email: this.props.userInfo.currentUser.email,
+  //     password: this.props.userInfo.currentUser.password
+  //   })
+  // }
 
   render(){
     return(

@@ -2,9 +2,11 @@ import { authRequest, authFailure, authSuccess } from './authentication-actions.
 import { getUser } from './get-user.js'
 import { API_URL } from './api_URL'
 import fetch from 'cross-fetch'
+import history from '../history.js'
 
 
 export const loginUserFetch = credentials => {
+
   //Fetch options body:
   const userCredentials = JSON.stringify({auth: credentials})
 
@@ -34,6 +36,8 @@ export const loginUserFetch = credentials => {
     .then((user) => {
       console.log(user)
         dispatch(authSuccess(user, localStorage.token))
+        //Push this state to the profile route
+        history.push('/profile')
     })
     .catch((errors) => {
         dispatch(authFailure(errors))

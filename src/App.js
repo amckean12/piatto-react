@@ -5,11 +5,12 @@ import HeaderComponent from './header/header.js'
 import FooterComponent from './footer/footer.js'
 import ProfileContainer from './profile/containers/profile-container.js'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import history from './history'
 
 
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <div className="App">
           <div className="initial-page">
             <Route exact path="/" component={HeaderComponent} />
