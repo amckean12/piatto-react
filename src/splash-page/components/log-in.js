@@ -16,9 +16,6 @@ class LogIn extends Component {
     password: ""
   }
 
-  componentDidUpdate(){
-    this.handleRedirect()
-  }
 
   handleChange(event){
     this.setState({
@@ -35,13 +32,11 @@ class LogIn extends Component {
     })
   }
 
-  handleRedirect(){
-    if(this.props.isAuthenticated === true){
-      return <Redirect to='/profile' />
-    }
-  }
 
   render(){
+    if (this.props.isLoggedIn === true){
+      return <Redirect to='/profile' />
+    }
     return(
       <div className="form-container log-in-container">
         <form action="#" onSubmit={(event) => this.handleSubmit(event)}>
@@ -57,7 +52,7 @@ class LogIn extends Component {
 }
 
 const mapStateToProps = user => ({
-  isLoggedIn: user.userReducer.isLoggedIn
+  isLoggedIn: user.userReducer.isAuthenticated
 })
 
 const mapDispatchToProps = dispatch => ({

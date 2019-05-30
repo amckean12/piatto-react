@@ -20,6 +20,8 @@ class NavbarContainer extends Component {
   }
 }
 
+const mapStateToProps = user => ({
+  userInfo: user.userReducer
+})
 
-
-export default NavbarContainer
+export default connect(mapStateToProps, null)(NavbarContainer)

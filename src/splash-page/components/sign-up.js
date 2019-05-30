@@ -17,6 +17,7 @@ class SignUp extends Component {
     password: "",
   }
 
+
   handleChange(event){
     this.setState({
       [event.target.name]: event.target.value
@@ -33,7 +34,7 @@ class SignUp extends Component {
       password: "",
     })
   }
-    //this.props.userSignUpFetch(this.state)
+
 
   render(){
     return(
@@ -51,9 +52,12 @@ class SignUp extends Component {
   }
 }
 
+const mapStateToProps = user => ({
+  isLoggedIn: user.userReducer.isLoggedIn
+})
+
 const mapDispatchToProps = dispatch => ({
   userSignUpFetch: newUserInfo => dispatch(userSignUpFetch(newUserInfo))
 })
 
-
-export default connect(null, mapDispatchToProps)(SignUp)
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)
