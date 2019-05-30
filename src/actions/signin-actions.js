@@ -1,6 +1,7 @@
 import { authRequest, authFailure, authSuccess } from './authentication-actions.js'
 import { getUser } from './get-user.js'
 import { API_URL } from './api_URL'
+import fetch from 'cross-fetch'
 
 export const loginUserFetch = credentials => {
   return dispatch => {

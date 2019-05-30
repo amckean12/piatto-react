@@ -25,7 +25,7 @@ class SignUp extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    userSignUpFetch(this.state)
+    this.props.userSignUpFetch(this.state)
     this.setState({
       first_name: "",
       last_name: "",
