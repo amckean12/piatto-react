@@ -31,6 +31,14 @@ export default function reducer(state = initialState, action) {
             token: null,
             errors: action.errors || []
           }
+        case types.LOGOUT:
+          return {
+            isAuthenticated: false,
+            isAuthenticating: false,
+            currentUser: {},
+            token: null,
+            errors: []
+          }
       default:
         return state;
     }

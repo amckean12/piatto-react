@@ -4,9 +4,11 @@ import NavbarContainer from './navbar-container.js'
 import MenuContainer from '../../menu/containers/menu-container.js'
 import ListContainer from './list-container.js'
 import "../profile.css"
+import { Redirect } from 'react-router-dom'
 
 
 class ProfileContainer extends Component {
+
 
 
   render(){
@@ -20,6 +22,10 @@ class ProfileContainer extends Component {
   }
 }
 
+const mapStateToProps = user => ({
+  userLoggedIn: user.userReducer.isAuthenticated
+})
 
 
-export default ProfileContainer
+
+export default connect(mapStateToProps, null)(ProfileContainer)

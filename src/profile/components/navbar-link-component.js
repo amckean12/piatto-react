@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 const NavbarLinkComponent = (props) => {
   return (
     <div>
-      <h3> {props.value} </h3>
+      <h3> {props.stateValue} </h3>
     </div>
   )
 }

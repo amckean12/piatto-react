@@ -3,32 +3,36 @@ import { connect } from 'react-redux';
 import NavbarLinkComponent from '../components/navbar-link-component';
 import NavbarProfileComponent from '../components/navbar-profile-component';
 import { getUser } from '../../actions/get-user.js'
+import { logout } from '../../actions/user-logout.js'
+import { Redirect } from 'react-router-dom'
 
 class NavbarContainer extends Component {
 
-  // componentDidMount(){
-  //   getUser({
-  //     email: this.props.userInfo.currentUser.email,
-  //     password: this.props.userInfo.currentUser.password
-  //   })
-  // }
+  handleLogout(event){
+    this.props.logout();
+  }
 
   render(){
     return(
       <div className='navbar-container'>
         <NavbarProfileComponent />
-        <NavbarLinkComponent value={"First Name"} />
-        <NavbarLinkComponent value={"Menu"} />
-        <NavbarLinkComponent value={"Friends"} />
-        <NavbarLinkComponent value={"Settings"} />
-        <NavbarLinkComponent value={"Logout"} />
+        <NavbarLinkComponent stateValue={this.props.userInfo.first_name} />
+        <NavbarLinkComponent stateValue={"Menu"} />
+        <NavbarLinkComponent stateValue={"Friends"} />
+        <NavbarLinkComponent stateValue={"Settings"} />
+        <button onClick={(event) => this.handleLogout(event)}>Logout</button>
       </div>
     )
   }
 }
 
 const mapStateToProps = user => ({
-  userInfo: user.userReducer
+  userInfo: user.userReducer.currentUser,
+  isLoggedIn: user.userReducer.isAuthenticated
 })
 
-export default connect(mapStateToProps, null)(NavbarContainer)
+const mapDispatchToProps = dispatch => ({
+  logout: userInfo => dispatch(logout(userInfo))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavbarContainer)
