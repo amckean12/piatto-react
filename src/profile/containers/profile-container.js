@@ -9,15 +9,12 @@ import RecipeContainer from '../../recipe/containers/recipe-container.js'
 
 
 class ProfileContainer extends Component {
-  state ={
-    route: '/profile'
-  }
 
   displayComponentBasedOnRoute(){
-    if (this.state.route === '/profile'){
+    if (this.props.routeState === '/profile'){
       return (<MenuContainer/>)
     }
-    if (this.state.route === '/profile/add-recipe'){
+    if (this.props.routeState === '/profile/add-recipe'){
       return (<RecipeContainer/>)
     }
   }
@@ -34,7 +31,8 @@ class ProfileContainer extends Component {
 }
 
 const mapStateToProps = user => ({
-  userLoggedIn: user.userReducer.isAuthenticated
+  userLoggedIn: user.userReducer.isAuthenticated,
+  routeState: user.routeReducer.currentRoute
 })
 
 

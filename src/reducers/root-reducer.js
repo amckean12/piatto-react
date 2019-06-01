@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
 import userReducer from './user-reducer'
 import foodReducer from './food-reducer'
+import routeReducer from './route-reducer'
 
 const rootReducer = combineReducers({
   userReducer,
-  foodReducer
+  foodReducer,
+  routeReducer
 })
 
 export default rootReducer
