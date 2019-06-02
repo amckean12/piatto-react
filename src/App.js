@@ -19,7 +19,7 @@ function App() {
             </div>
               <Route exact path="/" component={FooterComponent} />
           </div>
-          <Route exact path="/profile" component={ProfileContainer} />
+          <Route path="/profile" component={ProfileContainer} />
       </div>
     </Router>
   );

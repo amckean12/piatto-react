@@ -1,0 +1,9 @@
+.recipe-container{
+  overflow: scroll;
+  position: relative;
+  width: 60%;
+  float: left;
+  text-align: center;
+  height: 100%;
+  border:1px solid black;
+}

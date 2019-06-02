@@ -9,21 +9,19 @@ import RecipeContainer from '../../recipe/containers/recipe-container.js'
 
 
 class ProfileContainer extends Component {
-
-  displayComponentBasedOnRoute(){
+  componentDidUpdate(){
     if (this.props.routeState === '/profile'){
-      return (<MenuContainer/>)
+      return(<MenuContainer />)
     }
-    if (this.props.routeState === '/profile/add-recipe'){
-      return (<RecipeContainer/>)
+    if(this.props.routeState === '/profile/add-recipe'){
+      return(<RecipeContainer />)
     }
   }
-
   render(){
     return(
       <div className="profile-container">
         <NavbarContainer />
-        {this.displayComponentBasedOnRoute()}
+        {this.componentDidUpdate()}
         <ListContainer />
       </div>
     )
