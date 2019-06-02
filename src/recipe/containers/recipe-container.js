@@ -25,9 +25,9 @@ class RecipeContainer extends Component {
 
   render(){
     return(
-      <div className="recipe-container">
+      <div className="form-container recipe-container">
         <form onSubmit={(event) => this.handleSubmit(event)}>
-          <h1>Create Account</h1>
+          <h1>Create Recipe</h1>
           <input type="text" placeholder="Recipe Name" name="recipeName" onChange={(event) => this.handleChange(event)} value={this.state.RecipeName}/>
           <input type="text" placeholder="Recipe Description" name="description" onChange={(event) => this.handleChange(event)} value={this.state.description}/>
           <input type="text" placeholder="ingredients" name="ingredients" onChange={(event) => this.handleChange(event)} value={this.state.ingredients}/>
