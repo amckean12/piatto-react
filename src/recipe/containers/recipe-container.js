@@ -27,23 +27,24 @@ class RecipeContainer extends Component {
     })
   }
 
-  addRecipeAttribute(event){
-    if(event.target.getAttribute('name') === 'ingredientPush'){
-      let newIngredientArray = this.state.ingredients.slice();
-      newIngredientArray.push(this.state.ingredient)
-      this.setState({
-        ingredients: newIngredientArray,
-        ingredient: ""
+  addRecipeIngredient(event){
+    let newIngredientArray = this.state.ingredients.slice();
+    newIngredientArray.push(this.state.ingredient)
+    this.setState({
+      ingredients: newIngredientArray,
+      ingredient: ""
       })
-    }else{
+  }
+
+  addRecipeTag(event){
       let newTagArray = this.state.tags.slice();
       newTagArray.push(this.state.tag)
       this.setState({
         tags: newTagArray,
         tag: ""
       })
-    }
   }
+
 
 
   handleSubmit(event){
@@ -65,10 +66,10 @@ class RecipeContainer extends Component {
             </div>
             <div className="recipe-form-short">
               <input type="text" placeholder="ingredients" name="ingredient" onChange={(event) => this.handleChange(event)} value={this.state.ingredient}/>
-              <button onClick={(event) => this.addRecipeAttribute(event)} name="ingredientPush"><FontAwesomeIcon icon={ faPlus }/></button>
+              <button onClick={(event) => this.addRecipeIngredient(event)} name="ingredientPush"><FontAwesomeIcon icon={ faPlus }/></button>
               <IngredientPill />
               <input type="text" placeholder="tags" name="tag" onChange={(event) => this.handleChange(event)} value={this.state.tag}/>
-              <button onClick={(event) => this.addRecipeAttribute(event)} name="tagPush"><FontAwesomeIcon icon={ faPlus }/></button>
+              <button onClick={(event) => this.addRecipeTag(event)} name="tagPush"><FontAwesomeIcon icon={ faPlus }/></button>
               <TagPill />
             </div>
             <button>Create Recipe</button>
