@@ -4,6 +4,9 @@ import { Redirect } from 'react-router-dom'
 import { } from '../../actions/create-recipe-action.js'
 import IngredientPill from '../components/ingredient-pill.js'
 import TagPill from '../components/tag-pill.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
 
 import '../recipe.css'
 
@@ -12,6 +15,8 @@ class RecipeContainer extends Component {
   state = {
     recipeName: "",
     description: "",
+    ingredient: "",
+    tag: "",
     ingredients: [],
     tags: [],
   }
@@ -20,6 +25,24 @@ class RecipeContainer extends Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+  }
+
+  addRecipeAttribute(event){
+    if(event.target.getAttribute('name') === 'ingredientPush'){
+      let newIngredientArray = this.state.ingredients.slice();
+      newIngredientArray.push(this.state.ingredient)
+      this.setState({
+        ingredients: newIngredientArray,
+        ingredient: ""
+      })
+    }else{
+      let newTagArray = this.state.tags.slice();
+      newTagArray.push(this.state.tag)
+      this.setState({
+        tags: newTagArray,
+        tag: ""
+      })
+    }
   }
 
 
@@ -41,9 +64,11 @@ class RecipeContainer extends Component {
               <input type="text" className="recipe-description" name="description" onChange={(event) => this.handleChange(event)} value={this.state.description}/>
             </div>
             <div className="recipe-form-short">
-              <input type="text" placeholder="ingredients" name="ingredients" />
+              <input type="text" placeholder="ingredients" name="ingredient" onChange={(event) => this.handleChange(event)} value={this.state.ingredient}/>
+              <button onClick={(event) => this.addRecipeAttribute(event)} name="ingredientPush"><FontAwesomeIcon icon={ faPlus }/></button>
               <IngredientPill />
-              <input type="text" placeholder="tags" name="tags" />
+              <input type="text" placeholder="tags" name="tag" onChange={(event) => this.handleChange(event)} value={this.state.tag}/>
+              <button onClick={(event) => this.addRecipeAttribute(event)} name="tagPush"><FontAwesomeIcon icon={ faPlus }/></button>
               <TagPill />
             </div>
             <button>Create Recipe</button>
