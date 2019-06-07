@@ -45,6 +45,18 @@ class RecipeContainer extends Component {
       })
   }
 
+  deleteIngredient(event){
+    debugger;
+    let filteredIngredients = this.state.ingredients.filter(ingredient => ingredient !== event.target.value)
+    this.setState({
+      ingredients: filteredIngredients
+    })
+  }
+
+  deleteTag(){
+    alert("Hello this is delete Tag")
+  }
+
 
 
   handleSubmit(event){
@@ -53,6 +65,14 @@ class RecipeContainer extends Component {
   }
 
   render(){
+    const ingredients = this.state.ingredients.map( ingredient =>{
+      return(<IngredientPill ingredientName={ingredient} deleteIngredient={this.deleteIngredient}/>)
+    })
+
+    const tags = this.state.tags.map( tag =>{
+      return(<TagPill tagName ={tag} deleteTag={this.deleteTag}/>)
+    })
+
     return(
       <div className="recipe-container">
         <div className="new-recipe-form">
@@ -67,10 +87,10 @@ class RecipeContainer extends Component {
             <div className="recipe-form-short">
               <input type="text" placeholder="ingredients" name="ingredient" onChange={(event) => this.handleChange(event)} value={this.state.ingredient}/>
               <button onClick={(event) => this.addRecipeIngredient(event)} name="ingredientPush"><FontAwesomeIcon icon={ faPlus }/></button>
-              <IngredientPill />
+              { ingredients }
               <input type="text" placeholder="tags" name="tag" onChange={(event) => this.handleChange(event)} value={this.state.tag}/>
               <button onClick={(event) => this.addRecipeTag(event)} name="tagPush"><FontAwesomeIcon icon={ faPlus }/></button>
-              <TagPill />
+              { tags }
             </div>
             <button>Create Recipe</button>
           </form>
