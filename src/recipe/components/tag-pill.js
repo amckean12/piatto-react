@@ -8,8 +8,8 @@ const TagPill = (props) => {
   return (
     <div className="tag-pill">
       <div className="tagname-tag">
-       American
-         <button className="tag-exit"><FontAwesomeIcon icon= { faTimes }/></button>
+       {props.tagName}
+         <button className="tag-exit" onClick={props.deleteTag}><FontAwesomeIcon icon= { faTimes }/></button>
       </div>
     </div>
   )

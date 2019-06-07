@@ -8,8 +8,8 @@ const IngredientPill = (props) => {
   return (
     <div className="ingredient-pill">
        <div className="ingredient-tag">
-        Hamburger
-          <button className="ingredient-tag-exit"><FontAwesomeIcon icon= { faTimes }/></button>
+        {props.ingredientName}
+          <button className="ingredient-tag-exit" onClick={props.deleteIngredient} value={props.ingredientName}><FontAwesomeIcon icon= { faTimes }/></button>
        </div>
     </div>
   )
