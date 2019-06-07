@@ -1,17 +1,55 @@
 .recipe-container{
-  overflow: scroll;
   position: relative;
   width: 60%;
-  float: left;
   text-align: center;
+  float: left;
   height: 100%;
   border:1px solid black;
 }
 
-.recipe-container .recipe-form-long input {
-  background: #eee;
-  border: none;
-  padding: 12px 15px;
-  margin: 8px 0;
-  width: 50%;
+.new-recipe-form{
+  background-color: #fff;
+	border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+  z-index: 1;
+	width: 768px;
+	max-width: 90%;
+	min-height: 70%;
+  text-align: center;
+  margin-left: 6%;
+  margin-top: 15%;
+}
+
+.recipe-form-long input{
+  background: #f6f5f7;
+  font-family: 'Ubuntu';
+  display: flex;
+}
+
+.recipe-form-long .recipe-name{
+  margin-left: 5%;
+  margin-bottom: 3%;
+  width: 70%;
+  line-height: 2em;
+}
+
+.recipe-form-long .recipe-description{
+  margin-left: 5%;
+  margin-bottom: 3%;
+  width: 70%;
+  line-height: 3em;
+}
+
+.recipe-form-long p{
+  text-align: left;
+  padding-left: 5%;
+}
+
+.recipe-form-short input{
+  line-height: 2em;
+  margin-bottom: 1%;
+  margin-top: 1%;
 }

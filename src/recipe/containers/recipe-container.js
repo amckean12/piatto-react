@@ -31,19 +31,24 @@ class RecipeContainer extends Component {
   render(){
     return(
       <div className="recipe-container">
-        <form onSubmit={(event) => this.handleSubmit(event)}>
-          <h1>Create Recipe</h1>
-          <div className="recipe-form-long">
-            <input type="text" placeholder="Recipe Name" name="recipeName" onChange={(event) => this.handleChange(event)} value={this.state.RecipeName}/>
-            <input type="text" placeholder="Recipe Description" name="description" onChange={(event) => this.handleChange(event)} value={this.state.description}/>
-          </div>
-          <div className="recipe-form-short">
-            <input type="text" placeholder="ingredients" name="ingredients" />
-            <IngredientPill />
-            <input type="text" placeholder="tags" name="tags" />
-          </div>
-          <button>Create Recipe</button>
-        </form>
+        <div className="new-recipe-form">
+          <form onSubmit={(event) => this.handleSubmit(event)}>
+            <h1>Create Recipe</h1>
+            <div className="recipe-form-long">
+              <p>Name</p>
+              <input type="text" className="recipe-name" name="recipeName" onChange={(event) => this.handleChange(event)} value={this.state.RecipeName}/>
+              <p>Description</p>
+              <input type="text" className="recipe-description" name="description" onChange={(event) => this.handleChange(event)} value={this.state.description}/>
+            </div>
+            <div className="recipe-form-short">
+              <input type="text" placeholder="ingredients" name="ingredients" />
+              <IngredientPill />
+              <input type="text" placeholder="tags" name="tags" />
+              <TagPill />
+            </div>
+            <button>Create Recipe</button>
+          </form>
+        </div>
       </div>
     )
   }

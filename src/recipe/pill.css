@@ -28,3 +28,34 @@
 .ingredient-tag-exit:hover{
   background-color: rgba(0, 0, 0,.35);
 }
+
+.tagname-tag{
+  display: inline-flex;
+  padding: 6px 6px 6px 16px;
+  border-radius: 30px;
+  background-color: #6AEE60;
+  color: white;
+  align-items: center;
+  margin: 0 3px 0 3px;
+}
+
+.tag-exit{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  border: 0;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.tagname-tag:hover{
+  background-color: #16C10A;
+}
+
+.tag-exit:hover{
+  background-color: rgba(0, 0, 0,.35);
+}
