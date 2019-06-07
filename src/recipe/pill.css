@@ -1,0 +1,9 @@
+.ingredient-pill {
+  display: inline-flex;
+  padding: 6px 6px 6px 16px;
+  border-radius: 30px;
+  background-color: #ef2f2f;
+  color: white;
+  align-items: center;
+  margin: 0 3px 0 3px;
+}

@@ -39,6 +39,7 @@ class RecipeContainer extends Component {
           </div>
           <div className="recipe-form-short">
             <input type="text" placeholder="ingredients" name="ingredients" />
+            <IngredientPill />
             <input type="text" placeholder="tags" name="tags" />
           </div>
           <button>Create Recipe</button>
