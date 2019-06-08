@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
-import { } from '../../actions/create-recipe-action.js'
+import { createRecipe } from '../../actions/create-recipe-action.js'
 import IngredientPill from '../components/ingredient-pill.js'
 import TagPill from '../components/tag-pill.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,8 +28,9 @@ class RecipeContainer extends Component {
   }
 
   addRecipeIngredient(event){
+    let ingredient = {'description': this.state.ingredient}
     let newIngredientArray = this.state.ingredients.slice();
-    newIngredientArray.push(this.state.ingredient)
+    newIngredientArray.push(ingredient)
     this.setState({
       ingredients: newIngredientArray,
       ingredient: ""
@@ -37,12 +38,13 @@ class RecipeContainer extends Component {
   }
 
   addRecipeTag(event){
-      let newTagArray = this.state.tags.slice();
-      newTagArray.push(this.state.tag)
-      this.setState({
-        tags: newTagArray,
-        tag: ""
-      })
+    let tag = {'tag_name': this.state.tag}
+    let newTagArray = this.state.tags.slice();
+    newTagArray.push(tag)
+    this.setState({
+      tags: newTagArray,
+      tag: ""
+    })
   }
 
   deleteIngredient = (event) => {
@@ -67,17 +69,31 @@ class RecipeContainer extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    console.log("hit the submit")
+    let submittedState = {
+      recipeName: this.state.recipeName,
+      description: this.state.description,
+      ingredients: this.state.ingredients,
+      tags: this.state.tags,
+    }
+    this.props.createRecipe(submittedState)
+    this.setState({
+      recipeName: "",
+      description: "",
+      ingredient: "",
+      tag: "",
+      ingredients: [],
+      tags: [],
+    })
   }
 
   render(){
-    const ingredients = this.state.ingredients.map( ingredient =>{
-      return(<IngredientPill ingredientName={ingredient} deleteIngredient={this.deleteIngredient}/>)
-    })
+    // const ingredients = this.state.ingredients.map( ingredient =>{
+    //   return(<IngredientPill ingredientName={ingredient} deleteIngredient={this.deleteIngredient}/>)
+    // })
 
-    const tags = this.state.tags.map( tag =>{
-      return(<TagPill tagName ={tag} deleteTag={this.deleteTag}/>)
-    })
+    // const tags = this.state.tags.map( tag =>{
+    //   return(<TagPill tagName ={tag} deleteTag={this.deleteTag}/>)
+    // })
 
     return(
       <div className="recipe-container">
@@ -90,22 +106,28 @@ class RecipeContainer extends Component {
               <p>Description</p>
               <input type="text" className="recipe-description" name="description" onChange={(event) => this.handleChange(event)} value={this.state.description}/>
             </div>
-            <div className="recipe-form-short">
-              <input type="text" placeholder="ingredients" name="ingredient" onChange={(event) => this.handleChange(event)} value={this.state.ingredient}/>
-              <button onClick={(event) => this.addRecipeIngredient(event)} name="ingredientPush"><FontAwesomeIcon icon={ faPlus }/></button>
-              { ingredients }
-              <input type="text" placeholder="tags" name="tag" onChange={(event) => this.handleChange(event)} value={this.state.tag}/>
-              <button onClick={(event) => this.addRecipeTag(event)} name="tagPush"><FontAwesomeIcon icon={ faPlus }/></button>
-              { tags }
-            </div>
             <button>Create Recipe</button>
           </form>
+          <div className="recipe-form-short">
+            <input type="text" placeholder="ingredients" name="ingredient" onChange={(event) => this.handleChange(event)} value={this.state.ingredient}/>
+            <button onClick={(event) => this.addRecipeIngredient(event)} name="ingredientPush"><FontAwesomeIcon icon={ faPlus }/></button>
+            <input type="text" placeholder="tags" name="tag" onChange={(event) => this.handleChange(event)} value={this.state.tag}/>
+            <button onClick={(event) => this.addRecipeTag(event)} name="tagPush"><FontAwesomeIcon icon={ faPlus }/></button>
+          </div>
         </div>
       </div>
     )
   }
 }
 
+// const mapStateToProps = user => ({
+//   isLoggedIn: user.userReducer.isAuthenticated
+// })
+
+const mapDispatchToProps = dispatch => ({
+  createRecipe: recipeInfo => dispatch(createRecipe(recipeInfo))
+})
 
 
-export default(RecipeContainer)
+
+export default connect(null, mapDispatchToProps)(RecipeContainer)
