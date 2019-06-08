@@ -87,12 +87,12 @@ class RecipeContainer extends Component {
   }
 
   render(){
-    const ingredients = this.state.ingredients.map( (ingredient, key) =>{
-      return(<IngredientPill ingredientName={ingredient.description} deleteIngredient={this.deleteIngredient}/>)
+    const ingredients = this.state.ingredients.map( (ingredient) =>{
+      return(<IngredientPill key={ingredient.id} ingredientName={ingredient.description} deleteIngredient={this.deleteIngredient}/>)
     })
 
     const tags = this.state.tags.map( (tag, key) => {
-      return(<TagPill tagName ={tag.tag_name} deleteTag={this.deleteTag}/>)
+      return(<TagPill key={tag.id}  tagName ={tag.tag_name} deleteTag={this.deleteTag}/>)
     })
 
     return(

@@ -4,6 +4,7 @@ import history from '../history.js'
 
 export const createRecipe = recipeData => {
   const recipeInfo = JSON.stringify({recipe: recipeData})
+  console.log(recipeInfo)
   const options = {
     method: 'post',
     headers: {
@@ -13,7 +14,7 @@ export const createRecipe = recipeData => {
   }
 
   const fetchURL = `${API_URL}/recipes`
-  
+
   return dispatch => {
     return fetch(fetchURL, options)
     .then(resp => resp.json())
