@@ -70,10 +70,10 @@ class RecipeContainer extends Component {
   handleSubmit(event){
     event.preventDefault();
     let submittedState = {
-      recipeName: this.state.recipeName,
+      name: this.state.recipeName,
       description: this.state.description,
-      ingredients: this.state.ingredients,
-      tags: this.state.tags,
+      ingredients_attributes: this.state.ingredients,
+      tags_attributes: this.state.tags,
     }
     this.props.createRecipe(submittedState)
     this.setState({
