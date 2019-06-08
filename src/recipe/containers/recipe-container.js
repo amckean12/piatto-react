@@ -38,7 +38,7 @@ class RecipeContainer extends Component {
   }
 
   addRecipeTag(event){
-    let tag = {'tag_name': this.state.tag}
+    let tag = {'tag_name': this.state.tag, 'slug': this.state.tag}
     let newTagArray = this.state.tags.slice();
     newTagArray.push(tag)
     this.setState({
@@ -87,13 +87,13 @@ class RecipeContainer extends Component {
   }
 
   render(){
-    // const ingredients = this.state.ingredients.map( ingredient =>{
-    //   return(<IngredientPill ingredientName={ingredient} deleteIngredient={this.deleteIngredient}/>)
-    // })
+    const ingredients = this.state.ingredients.map( (ingredient, key) =>{
+      return(<IngredientPill ingredientName={ingredient.description} deleteIngredient={this.deleteIngredient}/>)
+    })
 
-    // const tags = this.state.tags.map( tag =>{
-    //   return(<TagPill tagName ={tag} deleteTag={this.deleteTag}/>)
-    // })
+    const tags = this.state.tags.map( (tag, key) => {
+      return(<TagPill tagName ={tag.tag_name} deleteTag={this.deleteTag}/>)
+    })
 
     return(
       <div className="recipe-container">
@@ -111,8 +111,10 @@ class RecipeContainer extends Component {
           <div className="recipe-form-short">
             <input type="text" placeholder="ingredients" name="ingredient" onChange={(event) => this.handleChange(event)} value={this.state.ingredient}/>
             <button onClick={(event) => this.addRecipeIngredient(event)} name="ingredientPush"><FontAwesomeIcon icon={ faPlus }/></button>
+            { ingredients }
             <input type="text" placeholder="tags" name="tag" onChange={(event) => this.handleChange(event)} value={this.state.tag}/>
             <button onClick={(event) => this.addRecipeTag(event)} name="tagPush"><FontAwesomeIcon icon={ faPlus }/></button>
+            { tags }
           </div>
         </div>
       </div>
