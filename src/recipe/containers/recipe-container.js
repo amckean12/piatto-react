@@ -45,13 +45,19 @@ class RecipeContainer extends Component {
       })
   }
 
-  deleteIngredient(event){
-    debugger;
+  deleteIngredient = (event) => {
     let filteredIngredients = this.state.ingredients.filter(ingredient => ingredient !== event.target.value)
     this.setState({
       ingredients: filteredIngredients
     })
   }
+
+  // deleteIngredient(event){
+  //   let filteredIngredients = this.state.ingredients.filter(ingredient => ingredient !== event.target.value)
+  //   this.setState({
+  //     ingredients: filteredIngredients
+  //   })
+  // }
 
   deleteTag(){
     alert("Hello this is delete Tag")
