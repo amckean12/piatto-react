@@ -7,6 +7,11 @@ import { Redirect } from 'react-router-dom'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import ProfileContainer from './profile-container'
 
+const linkStyle = {
+  color: "#FFFFFF",
+  "text-decoration": "none",
+}
+
 class NavbarContainer extends Component {
 
   handleLogout(event){
@@ -18,11 +23,11 @@ class NavbarContainer extends Component {
       <div className='navbar-container'>
         <NavbarProfileComponent />
         <ul>
-         <li><Link to={`profile/${this.props.userInfo.first_name}`}>{this.props.userInfo.first_name}</Link></li>
-         <li><Link to={`/profile`} onClick={this.props.addProfileRoute}>Menu</Link></li>
-         <li><Link to={`profile/add-recipe`} onClick={this.props.addRecipeRoute}>Add Recipe</Link></li>
-         <li><Link to={`profile/search-recipes`} onClick={this.props.addSearchRecipeRoute}>Search Recipes</Link></li>
-         <li><Link to={'/'} onClick={(event) => this.handleLogout(event)}>Log Out</Link></li>
+         <li><Link to={`profile/${this.props.userInfo.first_name}`} style={linkStyle}>{this.props.userInfo.first_name}</Link></li>
+         <li><Link to={`/profile`} onClick={this.props.addProfileRoute} style={linkStyle}>Menu</Link></li>
+         <li><Link to={`profile/add-recipe`} onClick={this.props.addRecipeRoute} style={linkStyle}>Add Recipe</Link></li>
+         <li><Link to={`profile/search-recipes`} onClick={this.props.addSearchRecipeRoute} style={linkStyle}>Search Recipes</Link></li>
+         <li><Link to={'/'} onClick={(event) => this.handleLogout(event)} style={linkStyle}>Log Out</Link></li>
        </ul>
       </div>
     )
