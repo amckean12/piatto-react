@@ -16,6 +16,9 @@ class ProfileContainer extends Component {
     if(this.props.routeState === '/profile/add-recipe'){
       return(<RecipeContainer />)
     }
+    if(this.props.routeState === '/profile/search-recipes'){
+      return(<MenuContainer />)
+    }
   }
   render(){
     return(
