@@ -10,7 +10,7 @@
   width: 20%;
   text-align: center;
   height: 100%;
-  border:1px solid black;
+  background-color: #16C10A;
 }
 
 .list-container{
@@ -18,5 +18,23 @@
   width: 20%;
   text-align: center;
   height: 100%;
-  border:1px solid black;
+}
+
+
+.navbar-container ul{
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.navbar-container li{
+  font-size: 20px;
+  list-style: none;
+  width: 100%;
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
+
+.navbar-container li:hover{
+  font-size: 23px;
 }
