@@ -3,8 +3,8 @@ import '../meal-box.css'
 
 const MealBoxDescription = (props) => {
   return (
-    <div className="meal-box-description-component">
-      <p>{ props.mealDescription}</p>
+    <div className="meal-box-description">
+      <p>{ props.description}</p>
     </div>
   )
 }

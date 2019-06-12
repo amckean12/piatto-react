@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import MealBoxTitle from '../components/meal-box-title.js'
 import MealBoxDescription from '../components/meal-box-description.js'
+import MealBoxIngredients from '../components/meal-box-ingredients.js'
 import "../meal-box.css"
 
 class DailyMealsContainer extends Component {
@@ -35,10 +36,10 @@ class DailyMealsContainer extends Component {
 
   render(){
     return(
-      <div className={this.state.mealBoxClassName} onClick={(event) => this.handleClick(event)}>
-        <MealBoxTitle recipeName={ this.props.food.name } />
-        { this.state.mealBoxClassName === "meal-box open" ? this.addDescriptionComponent() : <p>Click Me</p>}
-        { this.state.mealBoxClassName === "meal-box open" ? <button onClick={(event) => this.handleMealAdd(event)}>Add to Menu</button> : <p>Click Me</p>}
+      <div className="meal-wrapper">
+        <MealBoxTitle title={this.props.food.name}/>
+        <MealBoxDescription description={this.props.food.description}/>
+        <MealBoxIngredients ingredients={this.props.food.ingredients}/>
       </div>
     )
   }
