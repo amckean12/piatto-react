@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import MealBoxTitle from '../components/meal-box-title.js'
 import MealBoxDescription from '../components/meal-box-description.js'
 import MealBoxIngredients from '../components/meal-box-ingredients.js'
+import AddToMenu from '../components/add-to-menu.js'
 import "../meal-box.css"
 
 class DailyMealsContainer extends Component {
@@ -40,6 +41,7 @@ class DailyMealsContainer extends Component {
         <MealBoxTitle title={this.props.food.name}/>
         <MealBoxDescription description={this.props.food.description}/>
         <MealBoxIngredients ingredients={this.props.food.ingredients}/>
+        <AddToMenu addRecipe={this.props.addRecipe}/>
       </div>
     )
   }

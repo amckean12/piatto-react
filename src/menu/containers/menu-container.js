@@ -15,6 +15,10 @@ class MenuContainer extends Component {
     })
   }
 
+  addRecipeToMenu = () => {
+    console.log("This button was clicked")
+  }
+
 //When the enter button is clicked within the function
   handleSubmit(event){
     event.preventDefault()
@@ -30,7 +34,7 @@ class MenuContainer extends Component {
       return "";
     } else {
       return this.props.displayedFood.map( food =>{
-        return(<DailyMealsContainer key={food.id} food={ food }/>)
+        return(<DailyMealsContainer key={food.id} food={ food } addRecipe={this.addRecipeToMenu}/>)
       })
     }
   }
