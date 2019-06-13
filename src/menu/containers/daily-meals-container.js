@@ -29,4 +29,5 @@ class DailyMealsContainer extends Component {
 const mapDispatchToProps = dispatch => ({
   addRecipeToMenu: recipe => dispatch({type: "ADD_RECIPE_TO_MENU", recipe})
 })
+
 export default connect(null, mapDispatchToProps)(DailyMealsContainer)

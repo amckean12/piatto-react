@@ -6,12 +6,13 @@ import ListContainer from './list-container.js'
 import "../profile.css"
 import { Redirect } from 'react-router-dom'
 import RecipeContainer from '../../recipe/containers/recipe-container.js'
+import UserMenuContainer from '../../menu/containers/user-menu-container.js'
 
 
 class ProfileContainer extends Component {
   componentDidUpdate(){
     if (this.props.routeState === '/profile'){
-      return(<MenuContainer />)
+      return(<UserMenuContainer />)
     }
     if(this.props.routeState === '/profile/add-recipe'){
       return(<RecipeContainer />)

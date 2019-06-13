@@ -13,14 +13,15 @@ class UserMenuContainer extends Component {
   render(){
     return(
       <div className="meal-wrapper">
-        <MealBoxTitle title={this.props.food.name}/>
-        <MealBoxDescription description={this.props.food.description}/>
-        <MealBoxIngredients ingredients={this.props.food.ingredients}/>
+  
       </div>
     )
   }
 }
 
+const mapStateToProps = menu => ({
+  userLoggedIn: menu.menuReducer.recipes
+})
 
 
 export default connect(mapStateToProps)(UserMenuContainer)
