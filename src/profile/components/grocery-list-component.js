@@ -2,16 +2,14 @@ import React, { Component } from 'react'
 
 const componentPositioning = {
   position: "relative",
-  bottom: "0",
-  height: "50%",
   width: "100%",
+  'border-bottom':'1px solid #eee'
 }
 
 const GroceryListComponent = (props) => {
   return (
     <div className="Grocery List" style={componentPositioning}>
-      <h1> {props.testPropToPass} </h1>
-      "Place Grocery List Component Here"
+      <h1>Grocery List</h1>
     </div>
   )
 }

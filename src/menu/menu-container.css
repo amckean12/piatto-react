@@ -29,7 +29,6 @@
   border:none;
   border-bottom:1px solid #757575;
   font-size: 25px;
-  float: left;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }

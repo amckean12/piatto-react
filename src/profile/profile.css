@@ -11,13 +11,15 @@
   text-align: center;
   height: 100%;
   background-color: #16C10A;
+  box-shadow:1px 1px 5px rgba(0,0,0,0.4);
 }
 
 .list-container{
   float: right;
   width: 20%;
-  text-align: center;
   height: 100%;
+  box-shadow:1px 1px 5px rgba(0,0,0,0.4);
+  overflow: scroll;
 }
 
 
@@ -37,4 +39,32 @@
 
 .navbar-container li:hover{
   font-size: 23px;
+}
+
+.list-container h1{
+  text-align: center;
+}
+
+.create-shopping-list{
+  text-align: center;
+}
+
+.create-shopping-list button{
+  color: #009688;
+  background: #fff;
+  border: 1px solid #009688;
+  font-size: 17px;
+  padding: 7px 12px;
+  font-weight: normal;
+  margin: 6px 0;
+  margin-right: 12px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 120px;
+}
+
+.create-shopping-list button:hover{
+  color:#fff;
+  background:#009688;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import GroceryListComponent from '../components/grocery-list-component.js'
 import IngredientList from '../components/ingredient-list-component.js'
+import CreateShoppingList from '../components/create-shopping-list-button.js'
 
 class ListContainer extends Component {
 
@@ -17,8 +18,9 @@ class ListContainer extends Component {
   render(){
     return(
       <div className="list-container">
-        <GroceryListComponent testPropToPass={"Grocery List"}/>
+        <GroceryListComponent/>
         {this.componentDidUpdate()}
+        <CreateShoppingList />
       </div>
     )
   }
