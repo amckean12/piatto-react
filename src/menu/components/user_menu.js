@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import MealBoxTitle from './meal-box-title.js'
+import MealBoxDescription from './meal-box-description.js'
+import MealBoxIngredients from './meal-box-ingredients.js'
 import '../meal-box.css'
 
 const UserMenu = (props) => {
