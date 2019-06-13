@@ -11,6 +11,10 @@ import UserMenuContainer from '../../menu/containers/user-menu-container.js'
 
 class ProfileContainer extends Component {
   componentDidUpdate(){
+    this.renderComponent()
+  }
+
+  renderComponent = () => {
     if (this.props.routeState === '/menu'){
       return(<UserMenuContainer />)
     }
@@ -21,11 +25,12 @@ class ProfileContainer extends Component {
       return(<MenuContainer />)
     }
   }
+  
   render(){
     return(
       <div className="profile-container">
         <NavbarContainer />
-        {this.componentDidUpdate()}
+        {this.renderComponent()}
         <ListContainer />
       </div>
     )
