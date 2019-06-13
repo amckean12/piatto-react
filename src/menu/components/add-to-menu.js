@@ -8,7 +8,7 @@ import '../meal-box.css'
 const AddToMenu = (props) => {
   return (
     <div className="add-to-menu">
-      <button onClick={props.addRecipe}><FontAwesomeIcon icon={faPlus} /></button>
+      <button onClick={() => {props.addRecipe()}}><FontAwesomeIcon icon={faPlus} /></button>
     </div>
   )
 }
