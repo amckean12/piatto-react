@@ -15,12 +15,16 @@ class ListContainer extends Component {
     })
   }
 
+  generateList = () => {
+    alert("This button was clicked")
+  }
+
   render(){
     return(
       <div className="list-container">
         <GroceryListComponent/>
         {this.componentDidUpdate()}
-        <CreateShoppingList />
+        <CreateShoppingList generateList={() => {this.generateList()}}/>
       </div>
     )
   }
