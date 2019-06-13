@@ -7,10 +7,6 @@ import AddToMenu from '../components/add-to-menu.js'
 import "../meal-box.css"
 
 class DailyMealsContainer extends Component {
-  constructor(props){
-    super(props);
-  }
-
   addRecipe = (food) => {
     this.props.addRecipeToMenu(this.props.food)
   }
