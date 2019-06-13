@@ -6,11 +6,14 @@ import CreateShoppingList from '../components/create-shopping-list-button.js'
 
 class ListContainer extends Component {
 
+  state = {
+    ingredients: []
+  }
 
-  componentDidUpdate(){
+  listOutIngredients = () => {
     return this.props.ingredients.map(ingredientObject => {
-      return ingredientObject.map(ingredient =>{
-        return (<IngredientList name={ingredient}/>)
+      return ingredientObject.map(ingredient => {
+          console.log(ingredient.description);
       })
     })
   }
@@ -23,7 +26,7 @@ class ListContainer extends Component {
     return(
       <div className="list-container">
         <GroceryListComponent/>
-        {this.componentDidUpdate()}
+        {this.listOutIngredients()}
         <CreateShoppingList generateList={() => {this.generateList()}}/>
       </div>
     )
