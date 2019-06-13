@@ -1,5 +1,3 @@
-import * as types from '../actions/action-types';
-
 const initialMenuState = {
   recipes: [],
   ingredients: [],
@@ -13,8 +11,6 @@ export default function reducer(state = initialMenuState, action) {
                           action.recipe],
                 ingredients: [...state.ingredients,
                               action.recipe.ingredients]}
-      case types.LOGOUT:
-        return{state: initialMenuState}
       default:
         return state;
     }
