@@ -11,13 +11,13 @@ import UserMenuContainer from '../../menu/containers/user-menu-container.js'
 
 class ProfileContainer extends Component {
   componentDidUpdate(){
-    if (this.props.routeState === '/profile'){
+    if (this.props.routeState === '/menu'){
       return(<UserMenuContainer />)
     }
-    if(this.props.routeState === '/profile/add-recipe'){
+    if(this.props.routeState === '/add-recipe'){
       return(<RecipeContainer />)
     }
-    if(this.props.routeState === '/profile/search-recipes'){
+    if(this.props.routeState === '/search-recipes'){
       return(<MenuContainer />)
     }
   }

@@ -13,13 +13,35 @@ function App() {
     <Router history={history}>
       <div className="App">
           <div className="initial-page">
-            <Route exact path="/" component={HeaderComponent} />
+            <Route
+              exact path="/"
+              component={HeaderComponent}
+              />
             <div className="initialInputs">
-              <Route exact path="/" component={SplashContainer} />
+              <Route
+                exact path="/"
+                component={SplashContainer}
+                />
             </div>
-              <Route exact path="/" component={FooterComponent} />
+              <Route
+                exact path="/"
+                component={FooterComponent}
+                />
           </div>
-          <Route path="/profile" component={ProfileContainer} />
+          <Route
+            key="menu"
+            path="/menu"
+            component={ProfileContainer}
+            />
+          <Route
+            key= "add-recipe"
+            path="/add-recipe"
+            component={ProfileContainer}
+            />
+          <Route
+            key="search-recipes"
+            path="/search-recipes"
+            component={ProfileContainer} />
       </div>
     </Router>
   );
