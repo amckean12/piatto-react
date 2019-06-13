@@ -12,8 +12,9 @@ class UserMenuContainer extends Component {
 
   render(){
     return(
-      <div className="meal-wrapper">
-  
+      <div className="menu-container">
+        <h1>User's Menu</h1>
+
       </div>
     )
   }

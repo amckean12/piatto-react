@@ -41,7 +41,7 @@ class MenuContainer extends Component {
     return(
       <div className="menu-container">
         <div className="menu-for-user-container">
-          <h1>Add Recipe</h1>
+          <h1>Search Recipe</h1>
         </div>
         <div className="menu-search-form-container">
           <form className="menu-search-bar" onSubmit={(event) => this.handleSubmit(event)}>
