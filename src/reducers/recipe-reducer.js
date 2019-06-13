@@ -1,3 +1,5 @@
+import * as types from '../actions/action-types';
+
 const initialRecipeState = {
   recipeName: "",
   recipeDescription: "",
