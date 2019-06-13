@@ -8,17 +8,21 @@ class UserMenuContainer extends Component {
     super(props);
   }
 
-  componentDidUpdate(){
-    return this.props.recipes.map(food => {
-      return(<UserMenu  food={food} />)
-    })
+  renderUserMenus = () => {
+    if (this.props.recipes === undefined){
+      return("")
+    } else{
+      return this.props.recipes.map(food => {
+        return(<UserMenu  food={food} />)
+      })
+    }
   }
 
   render(){
     return(
       <div className="menu-container">
         <h1>User's Menu</h1>
-        {this.componentDidUpdate()}
+        {this.renderUserMenus()}
       </div>
     )
   }
