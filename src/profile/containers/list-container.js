@@ -14,8 +14,8 @@ class ListContainer extends Component {
   }
 }
 
-const mapStateToProps = user => ({
-  email: user.userReducer.email
+const mapStateToProps = recipe => ({
+  ingredients: recipe.menuReducer.recipes
 })
 
 
