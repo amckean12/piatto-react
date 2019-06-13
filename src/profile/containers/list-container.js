@@ -11,11 +11,15 @@ class ListContainer extends Component {
   }
 
   listOutIngredients = () => {
-    return this.props.ingredients.map(ingredientObject => {
-      return ingredientObject.map(ingredient => {
-          console.log(ingredient.description);
+    if (this.props.ingredients === undefined){
+      return("")
+    } else {
+      return this.props.ingredients.map(ingredientObject => {
+        return ingredientObject.map(ingredient => {
+          return (<IngredientList name={ingredient.description} />)
+        })
       })
-    })
+    }
   }
 
   generateList = () => {

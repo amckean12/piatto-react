@@ -10,7 +10,7 @@ const ingredientStyle = {
 const IngredientList = (props) => {
   return (
     <div className="ingredient-description" style={ingredientStyle}>
-      <p>{props.name.description}</p>
+      <p>{props.name}</p>
     </div>
   )
 }
