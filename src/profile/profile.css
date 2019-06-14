@@ -22,6 +22,13 @@
   overflow: scroll;
 }
 
+.navbar-container p{
+  font-size: 30px;
+  list-style: none;
+  width: 100%;
+  color: #FFFFFF;
+}
+
 
 .navbar-container ul{
   padding: 0;

@@ -22,8 +22,8 @@ class NavbarContainer extends Component {
     return(
       <div className='navbar-container'>
         <NavbarProfileComponent />
+        <p>{`Hi ${this.props.userInfo.first_name}!`}</p>
         <ul>
-         <li><Link to={`/${this.props.userInfo.first_name}`} style={linkStyle}>{this.props.userInfo.first_name}</Link></li>
          <li><Link to={`/menu`} onClick={this.props.addMenuRoute} style={linkStyle}>Menu</Link></li>
          <li><Link to={`/add-recipe`} onClick={this.props.addRecipeRoute} style={linkStyle}>Add Recipe</Link></li>
          <li><Link to={`/search-recipes`} onClick={this.props.addSearchRoute} style={linkStyle}>Search Recipes</Link></li>
