@@ -4,6 +4,10 @@ export const setFood = food => {
   return { type: "SET_FOOD", food: food }
 }
 
+export const setTagError = error =>  {
+  return { type: "SET_TAG_ERROR", error: error}
+}
+
 
 export const fetchFood = (tag) => {
   const findFoodURL = `${API_URL}/tags/${tag}`;
@@ -16,7 +20,13 @@ export const fetchFood = (tag) => {
   return dispatch => {
     return fetch(findFoodURL, options)
       .then(r=>r.json())
-      .then(food => dispatch(setFood(food)))
+      .then(food => {
+        if(food !== null){
+          dispatch(setFood(food))
+        }else{
+          dispatch(setTagError(food))
+        }
+      })
       .catch(err =>{
         console.log('Request Failed:', err)
       })
