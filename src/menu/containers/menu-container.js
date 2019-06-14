@@ -7,6 +7,7 @@ import '../menu-container.css'
 class MenuContainer extends Component {
   state = {
     searchTag: '',
+    mealBoxes: [],
   }
 
   handleChange(event) {
@@ -24,17 +25,15 @@ class MenuContainer extends Component {
     })
   }
 
-//How can I get this called after an update of state? Where Im at.
   componentDidUpdate(){
-    if (this.props.displayedFood === undefined ){
-      return "";
-    } else {
+    if (this.props.errors === null){
+      return (<p>Tag Not Found</p>);
+    } else if (this.props.displayedFood !== undefined) {
       return this.props.displayedFood.map( food =>{
         return(<DailyMealsContainer key={food.id} food={ food } />)
       })
     }
   }
-
 
 
   render(){
@@ -48,15 +47,17 @@ class MenuContainer extends Component {
             <input type="text" placeholder="Select a food type try: #Italian" onChange={(event) => this.handleChange(event)} value={this.state.searchTag}/>
           </form>
         </div>
-        { this.componentDidUpdate() }
+        {this.componentDidUpdate()}
       </div>
     )
   }
 }
 
+
 const mapStateToProps = food => {
  return({
-   displayedFood: food.foodReducer.recipes
+   displayedFood: food.foodReducer.food.recipes,
+   errors: food.foodReducer.errors
  })
 }
 
