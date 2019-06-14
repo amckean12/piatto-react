@@ -7,10 +7,11 @@ export default function reducer(state = initialFoodState, action) {
     switch (action.type) {
       case 'SET_FOOD':
         return {...state,
-                food: action.food}
+                food: action.food, 
+                errors: ["No Errors"]}
       case 'SET_TAG_ERROR':
         return {...state,
-                errors: [...state.errors, action.error]}
+                errors: [action.error]}
       default:
         return state;
     }
