@@ -7,7 +7,7 @@ import CreateShoppingList from '../components/create-shopping-list-button.js'
 class ListContainer extends Component {
 
   state = {
-    ingredients: []
+    ingredients: [this.props.ingredients]
   }
 
   listOutIngredients = () => {
