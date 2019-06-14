@@ -35,7 +35,7 @@ class LogIn extends Component {
 
   render(){
     if (this.props.isLoggedIn === true){
-      return <Redirect to='/profile' />
+      return <Redirect to='/menu' />
     }
     return(
       <div className="form-container log-in-container">
