@@ -1,3 +1,5 @@
+import { LOGOUT } from '../actions/action-types';
+
 const initialMenuState = {
   recipes: [],
   ingredients: [],
@@ -11,6 +13,8 @@ export default function reducer(state = initialMenuState, action) {
                           action.recipe],
                 ingredients: [...state.ingredients,
                               action.recipe.ingredients]}
+      case LOGOUT:
+        return initialMenuState
       default:
         return state;
     }
