@@ -56,7 +56,8 @@ class MenuContainer extends Component {
 
 const mapStateToProps = food => {
  return({
-   displayedFood: food.foodReducer.recipes
+   displayedFood: food.foodReducer.food.recipes,
+   errors: food.foodReducer.errors
  })
 }
 
