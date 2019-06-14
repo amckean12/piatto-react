@@ -43,9 +43,9 @@
 }
 
 .add-to-menu button{
-  background-color: #4CAF50;
-  border: none;
-  color: white;
+  background-color: #fff;
+  border: 1px solid #009688;
+  color: #009688;
   padding: 20px;
   text-align: center;
   text-decoration: none;
@@ -53,4 +53,9 @@
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 50%;
+}
+
+.add-to-menu button:hover{
+  color:#fff;
+  background:#009688;
 }
