@@ -37,7 +37,7 @@ export const loginUserFetch = credentials => {
       console.log(user)
         dispatch(authSuccess(user, localStorage.token))
         //Push this state to the profile route
-        history.push('/profile')
+        history.push('/menu')
     })
     .catch((errors) => {
         dispatch(authFailure(errors))
