@@ -16,13 +16,15 @@ class RecipeContainer extends Component {
     ingredients: [],
     tags: [],
     recipeInputIngredient: false,
-    recipeInputTag: false
+    recipeInputTag: false,
+    tagInput: ""
   }
 
-  handleChange(event){
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+  handleChange = () => {
+    debugger;
+    // this.setState({
+    //   [event.target.name]: event.target.value
+    // })
   }
 
   handleIngredientAdd = () => {
@@ -31,10 +33,15 @@ class RecipeContainer extends Component {
     })
   }
 
-  handleTagAdd = () => {
-    this.setState({
-      recipeInputTag: true
-    })
+  handleTagAdd = (tag) => {
+    if(this.state.recipeInputTag === false){
+      this.setState({
+        recipeInputTag: true
+      })
+    } else {
+      this.setState({
+      recipeInputTag: false})
+    }
   }
 
   renderIngredientPills = () => {
@@ -51,13 +58,13 @@ class RecipeContainer extends Component {
         <AddRecipeTitle/>
           <SingleRecipeInput inputTitle={"Recipe Name"}/>
           <SingleRecipeInput inputTitle={"Recipe Description"}/>
+          { this.state.recipeInputIngredient == true ? <SingleRecipeInput inputTitle={"Ingredient Input"} handleChange={() => {this.handleChange()}}/> : ""}
           <AddButton handleAdd={()=>{this.handleIngredientAdd()}}/>
-          { this.state.recipeInputIngredient == true ? <SingleRecipeInput inputTitle={"Ingredient Input"}/> : ""}
           <div className="ingredient-pills">
             {this.renderIngredientPills()}
           </div>
+          { this.state.recipeInputTag == true ? <SingleRecipeInput inputTitle={"Tag Input"} handleChange={this.handleChange()} name="tagInput" value={this.state.tagInput}/> : ""}
           <AddButton handleAdd={()=>{this.handleTagAdd()}}/>
-          { this.state.recipeInputTag == true ? <SingleRecipeInput inputTitle={"Tag Input"}/> : ""}
           <div className="tag-pills">
             {this.renderTagPills()}
           </div>

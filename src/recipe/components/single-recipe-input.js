@@ -5,7 +5,7 @@ const SingleRecipeInput = (props) => {
   return (
     <div className="new-single-recipe-input">
       <h2>{props.inputTitle}</h2>
-      <input type='text'></input>
+      <input type='text' onChange={props.handleChange}></input>
     </div>
   )
 }

@@ -16,6 +16,14 @@
   padding-left: 2%;
 }
 
+.new-single-recipe-input input{
+  background: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 96%;
+}
+
 .add-button button{
   background-color: #fff;
   border: 1px solid #009688;
