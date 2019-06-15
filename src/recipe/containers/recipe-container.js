@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import AddRecipeTitle from '../components/recipe-form-title'
+import SingleRecipeInput from '../components/single-recipe-input'
+import AddIngredientsButton from '../components/add-ingredients-button'
+
 
 import '../recipe.css'
 
@@ -27,10 +30,12 @@ class RecipeContainer extends Component {
 
   render(){
     return(
-      <div className="form-container recipe-container">
+      <div className="new-recipe-container">
         <AddRecipeTitle/>
         <form>
-          
+          <SingleRecipeInput inputTitle={"Recipe Name"}/>
+          <SingleRecipeInput inputTitle={"Recipe Description"}/>
+          <AddIngredientsButton />
         </form>
       </div>
     )
