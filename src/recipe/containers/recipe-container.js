@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import AddRecipeTitle from '../components/recipe-form-title'
 import SingleRecipeInput from '../components/single-recipe-input'
-import AddIngredientsButton from '../components/add-ingredients-button'
+import AddButton from '../components/add-button'
 
 
 import '../recipe.css'
@@ -15,6 +15,8 @@ class RecipeContainer extends Component {
     description: "",
     ingredients: [],
     tags: [],
+    recipeInputIngredient: false,
+    recipeInputTag: false
   }
 
   handleChange(event){
@@ -23,20 +25,42 @@ class RecipeContainer extends Component {
     })
   }
 
+  handleIngredientAdd = () => {
+    this.setState({
+      recipeInputIngredient: true
+    })
+  }
 
-  handleSubmit(event){
+  handleTagAdd = () => {
+    this.setState({
+      recipeInputTag: true
+    })
+  }
 
+  renderIngredientPills = () => {
+    return("Ingredients")
+  }
+
+  renderTagPills = () => {
+    return("Tags")
   }
 
   render(){
     return(
       <div className="new-recipe-container">
         <AddRecipeTitle/>
-        <form>
           <SingleRecipeInput inputTitle={"Recipe Name"}/>
           <SingleRecipeInput inputTitle={"Recipe Description"}/>
-          <AddIngredientsButton />
-        </form>
+          <AddButton handleAdd={()=>{this.handleIngredientAdd()}}/>
+          { this.state.recipeInputIngredient == true ? <SingleRecipeInput inputTitle={"Ingredient Input"}/> : ""}
+          <div className="ingredient-pills">
+            {this.renderIngredientPills()}
+          </div>
+          <AddButton handleAdd={()=>{this.handleTagAdd()}}/>
+          { this.state.recipeInputTag == true ? <SingleRecipeInput inputTitle={"Tag Input"}/> : ""}
+          <div className="tag-pills">
+            {this.renderTagPills()}
+          </div>
       </div>
     )
   }
