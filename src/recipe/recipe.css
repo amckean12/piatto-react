@@ -1,9 +1,17 @@
-
-.recipe-container{
+.new-recipe-container{
   overflow: scroll;
   position: relative;
   width: 60%;
   float: left;
   text-align: center;
   height: 100%;
+}
+
+.new-single-recipe-input{
+  width: 100%;
+}
+
+.new-single-recipe-input h2{
+  text-align: left;
+  padding-left: 2%;
 }
