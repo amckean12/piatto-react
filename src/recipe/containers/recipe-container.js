@@ -42,18 +42,7 @@ class RecipeContainer extends Component {
   }
 
   onDeleteButtonClicked = (event) => {
-    debugger;
-    if(event.target.id === "ingredient"){
-      let filteredIngredients = this.state.ingredients.filter(ingredient => ingredient !== event.target.name)
-      this.setState({
-        ingredients: filteredIngredients
-      })
-    }else if(event.target.id === "tag"){
-      let filteredTags = this.state.tags.filter(tag => tag !== event.target.name)
-      this.setState({
-        tags: filteredTags
-      })
-    }
+    console.log("Button Clicked")
   }
 
   render(){
