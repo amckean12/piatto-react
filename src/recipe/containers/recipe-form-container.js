@@ -24,9 +24,9 @@ class RecipeFormContainer extends Component {
           <input type="text" placeholder="Recipe Description" onChange={this.props.handleChange} name="description"></input>
         </form>
         <div className="multi-recipe-inputs">
-          <input type= "text" placeholder="Ingredient" onChange={this.props.handleChange} name="ingredientInput"></input>
+          <input type= "text" placeholder="Ingredient" onChange={this.props.handleChange} name="ingredientInput" id="ingredient-input"></input>
           <button onClick={this.props.onAddButtonClick} name="ingredients"><FontAwesomeIcon icon={faPlus} /></button>
-          <input type="text" placeholder="Tag" onChange={this.props.handleChange} name="tagInput"></input>
+          <input type="text" placeholder="Tag" onChange={this.props.handleChange} name="tagInput" id="tag-input"></input>
           <button onClick={this.props.onAddButtonClick} name="tags"><FontAwesomeIcon icon={faPlus} /></button>
         </div>
       </div>

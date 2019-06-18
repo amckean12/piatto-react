@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
 import { } from '../../actions/create-recipe-action.js'
-import TextBox from '../components/textbox'
-import SubmitButton from '../components/submit'
-import CommentComponent from '../components/comment'
 import RecipeFormContainer from './recipe-form-container'
 import NewRecipeDisplay from  './new-recipe-display'
 
@@ -29,7 +26,19 @@ class RecipeContainer extends Component {
   }
 
   onAddButtonClick = (event) => {
-    
+    if(event.target.name === "ingredients"){
+      this.setState({
+        ingredients: [...this.state.ingredients, this.state.ingredientInput],
+        ingredientInput: ""
+      })
+      document.getElementById("ingredient-input").value = "";
+    }else{
+      this.setState({
+        tags: [...this.state.tags, this.state.tagInput],
+        tagInput: ""
+      })
+      document.getElementById("tag-input").value = "";
+    }
   }
 
   render(){
