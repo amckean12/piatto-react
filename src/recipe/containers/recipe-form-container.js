@@ -8,7 +8,9 @@ import '../recipe.css'
 
 
 class RecipeFormContainer extends Component {
-
+  constructor(props){
+    super(props)
+  }
 
 
   render(){
@@ -16,12 +18,12 @@ class RecipeFormContainer extends Component {
       <div className="recipe-form-container">
         <RecipeTitle />
         <form>
-          <input type="text" placeholder="Recipe Name"></input>
-          <input type="text" placeholder="Recipe Description"></input>
+          <input type="text" placeholder="Recipe Name" onChange={this.props.handleChange} name="name"></input>
+          <input type="text" placeholder="Recipe Description" onChange={this.props.handleChange} name="description"></input>
         </form>
         <div className="multi-recipe-inputs">
-          <input type= "text" placeholder="Ingredient"></input>
-          <input type="text" placeholder="Tag"></input>
+          <input type= "text" placeholder="Ingredient" onChange={this.props.handleChange} name="ingredientInput"></input>
+          <input type="text" placeholder="Tag" onChange={this.props.handleChange} name="tagInput"></input>
         </div>
       </div>
     )

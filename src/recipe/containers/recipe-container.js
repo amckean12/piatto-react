@@ -22,10 +22,16 @@ class RecipeContainer extends Component {
     tags: []
     }
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   render(){
     return(
       <div className="recipe-container">
-        <RecipeFormContainer />
+        <RecipeFormContainer handleChange={this.handleChange}/>
         <NewRecipeDisplay />
       </div>
     )
