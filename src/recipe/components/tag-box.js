@@ -6,7 +6,7 @@ const TagBox = (props) => {
   return (
     <div className="tag-pill">
       {props.tag}
-      <button onClick={props.onDeleteButtonClicked}><FontAwesomeIcon icon={faTimes} /></button>
+      <button onClick={props.onDeleteButtonClicked} name={props.tag} id="tag"><FontAwesomeIcon icon={faTimes} /></button>
     </div>
   )
 }

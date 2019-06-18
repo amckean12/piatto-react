@@ -6,7 +6,7 @@ const IngredientBox = (props) => {
   return (
     <div className="ingredient-pill">
       {props.ingredient}
-      <button onClick={props.onDeleteButtonClicked}><FontAwesomeIcon icon={faTimes} /></button>
+      <button onClick={props.onDeleteButtonClicked} name={props.ingredient} id="ingredient"><FontAwesomeIcon icon={faTimes} /></button>
     </div>
   )
 }
