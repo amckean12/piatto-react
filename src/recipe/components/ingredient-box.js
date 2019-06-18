@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 const IngredientBox = (props) => {
   return (
-    <div className="ingredient">
+    <div className="ingredient-pill">
       {props.ingredient}
     </div>
   )
