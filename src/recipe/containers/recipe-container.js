@@ -41,11 +41,15 @@ class RecipeContainer extends Component {
     }
   }
 
+  onDeleteButtonClicked = (event) => {
+    console.log("Hey buddy you clicked this")
+  }
+
   render(){
     return(
       <div className="recipe-container">
         <RecipeFormContainer handleChange={this.handleChange} onAddButtonClick={this.onAddButtonClick}/>
-        <NewRecipeDisplay ingredients={this.state.ingredients} tags={this.state.tags}/>
+        <NewRecipeDisplay ingredients={this.state.ingredients} tags={this.state.tags} onDeleteButtonClicked={this.onDeleteButtonClicked}/>
       </div>
     )
   }

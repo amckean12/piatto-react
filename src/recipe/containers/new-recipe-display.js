@@ -17,7 +17,7 @@ class NewRecipeDisplay extends Component {
       return("")
     }else{
       return this.props.tags.map(tag =>{
-        return(<TagBox tag={tag} />)
+        return(<TagBox tag={tag} onDeleteButtonClicked={this.props.onDeleteButtonClicked}/>)
       })
     }
   }
@@ -28,7 +28,7 @@ class NewRecipeDisplay extends Component {
       return("")
     }else{
       return this.props.ingredients.map(ingredient =>{
-        return(<IngredientBox ingredient={ingredient} />)
+        return(<IngredientBox ingredient={ingredient} onDeleteButtonClicked={this.props.onDeleteButtonClicked}/>)
       })
     }
   }
