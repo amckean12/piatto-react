@@ -9,12 +9,12 @@
 }
 
 
-.new-recipe-display-container form{
+.recipe-form-container form{
   vertical-align: middle;
   margin-left: 1%;
 }
 
-.new-recipe-display-container input[type=text] {
+.recipe-form-container input[type=text] {
   margin-bottom: 25px;
   padding-top: 25px;
   outline:none;
@@ -27,7 +27,7 @@
   font-family: 'Ubuntu'
 }
 
-.new-recipe-display-container input[type=text]:focus {
+.recipe-form-container input[type=text]:focus {
   width: 98%;
 }
 
