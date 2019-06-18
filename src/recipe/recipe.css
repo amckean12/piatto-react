@@ -37,6 +37,36 @@
   margin-left: 1%;
 }
 
+.multi-recipe-inputs input{
+  margin-bottom: 25px;
+  padding-top: 25px;
+  outline:none;
+  width: 60%;
+}
+
+.multi-recipe-inputs input[type=text]:focus {
+  width: 80%;
+}
+
+.multi-recipe-inputs button{
+  background-color: #fff;
+  border: 1px solid #009688;
+  color: #009688;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 2px;
+  border-radius: 50%;
+}
+
+.multi-recipe-inputs button:hover{
+  color:#fff;
+  background:#009688;
+}
+
+
 
 .display-box{
   position: relative;
