@@ -28,10 +28,14 @@ class RecipeContainer extends Component {
     })
   }
 
+  onAddButtonClick = (event) => {
+    
+  }
+
   render(){
     return(
       <div className="recipe-container">
-        <RecipeFormContainer handleChange={this.handleChange}/>
+        <RecipeFormContainer handleChange={this.handleChange} onAddButtonClick={this.onAddButtonClick}/>
         <NewRecipeDisplay />
       </div>
     )
