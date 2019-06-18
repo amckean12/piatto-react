@@ -5,6 +5,7 @@ import fetch from 'cross-fetch'
 
 export const userSignUpFetch = user => {
   //Fetch options body
+  console.log('C');
   const newUser = JSON.stringify({user: user})
 
   // fetch options for signing up user
@@ -23,7 +24,9 @@ export const userSignUpFetch = user => {
     return fetch(fetchURL, options)
       .then(resp => resp.json())
       //calling action to log in user
-      .then(jresp => { dispatch(loginUserFetch({
+      .then(jresp => {
+        console.log('D');
+        dispatch(loginUserFetch({
         first_name: user.first_name,
         last_name: user.last_name,
         email: user.email,
@@ -34,4 +37,5 @@ export const userSignUpFetch = user => {
         console.log('Request Failed:', err)
       })
     }
+    console.log('E');
   }
