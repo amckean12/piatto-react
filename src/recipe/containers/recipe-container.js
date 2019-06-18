@@ -13,6 +13,15 @@ import '../recipe.css'
 
 class RecipeContainer extends Component {
 
+  state = {
+    name: "",
+    description: "",
+    ingredientInput: "",
+    tagInput: "",
+    ingredients: [],
+    tags: []
+    }
+
   render(){
     return(
       <div className="recipe-container">
