@@ -15,7 +15,7 @@ class RecipeContainer extends Component {
 
   render(){
     return(
-      <div className="form-container recipe-container">
+      <div className="recipe-container">
         <RecipeFormContainer />
         <NewRecipeDisplay />
       </div>

@@ -1,4 +1,3 @@
-
 .recipe-container{
   overflow: scroll;
   position: relative;
@@ -7,4 +6,33 @@
   text-align: center;
   height: 100%;
   border:1px solid black;
+}
+
+
+.new-recipe-display-container form{
+  vertical-align: middle;
+  margin-left: 1%;
+}
+
+.new-recipe-display-container input[type=text] {
+  margin-bottom: 25px;
+  padding-top: 25px;
+  outline:none;
+  width: 60%;
+  border:none;
+  border-bottom:1px solid #757575;
+  font-size: 25px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  font-family: 'Ubuntu'
+}
+
+.new-recipe-display-container input[type=text]:focus {
+  width: 98%;
+}
+
+
+.multi-recipe-inputs {
+  vertical-align: middle;
+  margin-left: 1%;
 }
