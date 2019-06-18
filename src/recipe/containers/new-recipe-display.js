@@ -8,11 +8,40 @@ import '../recipe.css'
 
 class NewRecipeDisplay extends Component {
 
+  constructor(props){
+    super(props)
+  }
+
+  renderTags = () => {
+    if(this.props.tags === undefined){
+      return("")
+    }else{
+      return this.props.tags.map(tag =>{
+        return(<TagBox tag={tag} />)
+      })
+    }
+  }
+
+
+  renderIngredients = () => {
+    if(this.props.ingredients === undefined){
+      return("")
+    }else{
+      return this.props.ingredients.map(ingredient =>{
+        return(<IngredientBox ingredient={ingredient} />)
+      })
+    }
+  }
+
   render(){
     return(
-      <div className="new-recipe-display-container">
-        <IngredientBox />
-        <TagBox />
+      <div className="new-recipe-display">
+        <div className="display-box">
+          {this.renderIngredients()}
+        </div>
+        <div className="display-box">
+          {this.renderTags()}
+        </div>
       </div>
     )
   }

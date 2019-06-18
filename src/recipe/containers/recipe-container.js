@@ -45,7 +45,7 @@ class RecipeContainer extends Component {
     return(
       <div className="recipe-container">
         <RecipeFormContainer handleChange={this.handleChange} onAddButtonClick={this.onAddButtonClick}/>
-        <NewRecipeDisplay />
+        <NewRecipeDisplay ingredients={this.state.ingredients} tags={this.state.tags}/>
       </div>
     )
   }
