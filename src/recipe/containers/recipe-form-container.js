@@ -29,7 +29,7 @@ class RecipeFormContainer extends Component {
           <input type="text" placeholder="Tag" onChange={this.props.handleChange} name="tagInput" id="tag-input"></input>
           <button onClick={this.props.onAddButtonClick} name="tags"><FontAwesomeIcon icon={faPlus} /></button>
         </div>
-        <button>Create Recipe</button>
+        <button onClick={this.props.submitRecipe}>Create Recipe</button>
       </div>
     )
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'
-import { } from '../../actions/create-recipe-action.js'
+import { createRecipe } from '../../actions/create-recipe-action.js'
 import RecipeFormContainer from './recipe-form-container'
 import NewRecipeDisplay from  './new-recipe-display'
 
@@ -18,6 +18,37 @@ class RecipeContainer extends Component {
     ingredients: [],
     tags: []
     }
+
+
+
+  submitRecipe = () => {
+    //Look to place this in redux
+    this.props.createRecipe(
+      {name: this.state.name,
+      description: this.state.description,
+      ingredients_attributes: [
+        this.state.ingredients.map(ingredient => {
+          return {description: this.state.ingredient}
+        })
+      ],
+      tags_attributes: [
+        this.state.tags.map(tag =>{
+          return {
+            tag_name: this.state.tag,
+            slug: this.state.tag
+          }
+        })
+      ]}
+    )
+    this.setState({
+      name: "",
+      description: "",
+      ingredientInput: "",
+      tagInput: "",
+      ingredients: [],
+      tags: []
+    })
+  }
 
   handleChange = (event) => {
     this.setState({
@@ -58,7 +89,7 @@ class RecipeContainer extends Component {
   render(){
     return(
       <div className="recipe-container">
-        <RecipeFormContainer handleChange={this.handleChange} onAddButtonClick={this.onAddButtonClick}/>
+        <RecipeFormContainer handleChange={this.handleChange} onAddButtonClick={this.onAddButtonClick} submitRecipe={this.submitRecipe}/>
         <NewRecipeDisplay ingredients={this.state.ingredients} tags={this.state.tags} onDeleteButtonClicked={this.onDeleteButtonClicked}/>
       </div>
     )
@@ -66,6 +97,7 @@ class RecipeContainer extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
+  createRecipe: recipeInfo => dispatch(createRecipe(recipeInfo))
 })
 
 
