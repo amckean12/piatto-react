@@ -65,6 +65,9 @@ class RecipeContainer extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+})
 
 
-export default(RecipeContainer)
+
+export default connect(null, mapDispatchToProps)(RecipeContainer)
