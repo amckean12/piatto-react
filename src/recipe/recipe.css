@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,800');
+
 .recipe-container{
   overflow: scroll;
   position: relative;
@@ -6,6 +8,7 @@
   text-align: center;
   height: 100%;
   border:1px solid black;
+  font-family: 'Ubuntu'
 }
 
 
@@ -45,7 +48,7 @@
 }
 
 .multi-recipe-inputs input[type=text]:focus {
-  width: 80%;
+  width: 60%;
 }
 
 .multi-recipe-inputs button{
@@ -80,4 +83,60 @@
   overflow: scroll;
   float: left;
   margin-left: 5%
+}
+
+.tag-pill{
+  background-color: #009688;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.tag-pill button{
+  margin-left: 10px;
+  background-color: #fff;
+  border: 1px solid #009688;
+  color: #009688;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.tag-pill button:hover{
+  background-color: #009688;
+  color: #fff;
+}
+
+.ingredient-pill button{
+  margin-left: 10px;
+  background-color: #fff;
+  border: 1px solid #009688;
+  color: #009688;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.ingredient-pill button:hover{
+  background-color: #009688;
+  color: #fff;
+}
+
+.ingredient-pill{
+  background-color: #009688;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
 }
