@@ -30,7 +30,7 @@ class RecipeContainer extends Component {
         this.state.ingredients.map(ingredient => {
           return {description: ingredient}
         }),
-      tags_attributes: 
+      tags_attributes:
         this.state.tags.map(tag =>{
           return {
             tag_name: tag,
@@ -47,6 +47,8 @@ class RecipeContainer extends Component {
       ingredients: [],
       tags: []
     })
+    document.getElementById("recipe-name").value = "";
+    document.getElementById("recipe-description").value = "";
   }
 
   handleChange = (event) => {

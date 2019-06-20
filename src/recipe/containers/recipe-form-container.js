@@ -20,8 +20,8 @@ class RecipeFormContainer extends Component {
       <div className="recipe-form-container">
         <RecipeTitle />
         <form>
-          <input type="text" placeholder="Recipe Name" onChange={this.props.handleChange} name="name"></input>
-          <input type="text" placeholder="Recipe Description" onChange={this.props.handleChange} name="description"></input>
+          <input type="text" placeholder="Recipe Name" onChange={this.props.handleChange} name="name" id="recipe-name"></input>
+          <input type="text" placeholder="Recipe Description" onChange={this.props.handleChange} name="description" id="recipe-description"></input>
         </form>
         <div className="multi-recipe-inputs">
           <input type= "text" placeholder="Ingredient" onChange={this.props.handleChange} name="ingredientInput" id="ingredient-input"></input>
