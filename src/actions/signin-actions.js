@@ -4,7 +4,6 @@ import { API_URL } from './api_URL'
 import fetch from 'cross-fetch'
 import history from '../history.js'
 
-
 export const loginUserFetch = credentials => {
 
   //Fetch options body:
@@ -38,6 +37,7 @@ export const loginUserFetch = credentials => {
         dispatch(authSuccess(user, localStorage.token))
         //Push this state to the profile route
         history.push('/menu')
+
     })
     .catch((errors) => {
         dispatch(authFailure(errors))
