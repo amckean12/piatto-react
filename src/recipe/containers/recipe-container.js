@@ -26,19 +26,18 @@ class RecipeContainer extends Component {
     this.props.createRecipe(
       {name: this.state.name,
       description: this.state.description,
-      ingredients_attributes: [
+      ingredients_attributes:
         this.state.ingredients.map(ingredient => {
-          return {description: this.state.ingredient}
-        })
-      ],
-      tags_attributes: [
+          return {description: ingredient}
+        }),
+      tags_attributes: 
         this.state.tags.map(tag =>{
           return {
-            tag_name: this.state.tag,
-            slug: this.state.tag
+            tag_name: tag,
+            slug: tag
           }
         })
-      ]}
+      }
     )
     this.setState({
       name: "",

@@ -4,7 +4,25 @@ import fetch from 'cross-fetch'
 export const createRecipe = recipe => {
   const recipeData = JSON.stringify({recipe})
 
+  const options = {
+    method: 'post',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': localStorage.token
+    },
+    body: recipeData
+  }
+
+  const fetchURL = `${API_URL}/recipes`
+
   return dispatch => {
-    console.log(recipeData)
+    return fetch(fetchURL, options)
+    .then(resp => resp.json())
+    .then((response) => {
+      console.log(response)
+    })
+    .catch((errors) => {
+      console.log(errors)
+    })
   }
 }
