@@ -44,7 +44,7 @@ class MenuContainer extends Component {
         </div>
         <div className="menu-search-form-container">
           <form className="menu-search-bar" onSubmit={(event) => this.handleSubmit(event)}>
-            <input type="text" placeholder="Select a food type try: #Italian" onChange={(event) => this.handleChange(event)} value={this.state.searchTag}/>
+            <input type="text" placeholder="Select a food type try: italian" onChange={(event) => this.handleChange(event)} value={this.state.searchTag}/>
           </form>
         </div>
         {this.componentDidUpdate()}
